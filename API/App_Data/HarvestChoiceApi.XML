@@ -1,0 +1,1316 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HarvestChoiceApi</name>
+    </assembly>
+    <members>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:HarvestChoiceApi.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:HarvestChoiceApi.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:HarvestChoiceApi.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:HarvestChoiceApi.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:HarvestChoiceApi.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.#ctor(System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPaths">The physical paths to XML documents.</param>
+            <exception cref="T:System.ArgumentNullException">documentPaths</exception>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpControllerDescriptor)">
+            <summary>
+            Gets the documentation based on <see cref="T:System.Web.Http.Controllers.HttpControllerDescriptor" />.
+            </summary>
+            <param name="controllerDescriptor">The controller descriptor.</param>
+            <returns>The documentation for the controller.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>
+            Gets the documentation based on <see cref="T:System.Web.Http.Controllers.HttpActionDescriptor" />.
+            </summary>
+            <param name="actionDescriptor">The action descriptor.</param>
+            <returns>The documentation for the action.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpParameterDescriptor)">
+            <summary>
+            Gets the documentation based on <see cref="T:System.Web.Http.Controllers.HttpParameterDescriptor" />.
+            </summary>
+            <param name="parameterDescriptor">The parameter descriptor.</param>
+            <returns>The documentation for the parameter.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.GetDocumentation(System.Reflection.MemberInfo)">
+            <summary>
+            Gets the documentation based on <see cref="T:MemberInfo"/>.
+            </summary>
+            <param name="member">The member.</param>
+            <returns>The documentation for the member.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.GetDocumentation(System.Type)">
+            <summary>
+            Gets the documentation for the specified type.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The documentation for the type.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.GetResponseDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>
+            Gets the response documentation.
+            </summary>
+            <param name="actionDescriptor">The action descriptor.</param>
+            <returns>A html-formatted string for the action response.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.GetMethodNode(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>
+            Gets the method node.
+            </summary>
+            <param name="actionDescriptor">The action descriptor.</param>
+            <returns>A xpath navigator.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.GetTypeNode(System.Type)">
+            <summary>
+            Gets the type node.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>A xpath navigator.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.GetMemberName(System.Reflection.MethodInfo)">
+            <summary>
+            Gets the member name.
+            </summary>
+            <param name="method">The method.</param>
+            <returns>The member name.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.GetTypeName(System.Type)">
+            <summary>
+            Gets the type name.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The type name.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.GetTagValueForController(System.Xml.XPath.XPathNavigator,System.String)">
+            <summary>
+            Gets the tag value for a controller.
+            </summary>
+            <param name="parentNode">The parent node.</param>
+            <param name="tagName">The tag name.</param>
+            <returns>A html-formatted representation of the tag value.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.GetTagValueForAction(System.Xml.XPath.XPathNavigator,System.String)">
+            <summary>
+            Gets the tag value for a controller.
+            </summary>
+            <param name="parentNode">The parent node.</param>
+            <param name="tagName">The tag name.</param>
+            <returns>A html-formatted representation of the tag value.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.GetTagValue(System.Xml.XPath.XPathNavigator,System.String)">
+            <summary>
+            Gets the tag value.
+            </summary>
+            <param name="parentNode">The parent node.</param>
+            <param name="tagName">The tag name.</param>
+            <returns>A html-formatted representation of the tag value.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.MultipleXmlDocumentationProvider.ConvertDocTagsToHtml(System.String)">
+            <summary>
+            Converts the document tags to HTML.
+            </summary>
+            <param name="i">The input xml.</param>
+            <returns>A HTML-formatted string.</returns>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,HarvestChoiceApi.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,HarvestChoiceApi.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:HarvestChoiceApi.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},HarvestChoiceApi.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:HarvestChoiceApi.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.#ctor(HarvestChoiceApi.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,HarvestChoiceApi.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:HarvestChoiceApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:HarvestChoiceApi.Classes.CorsHandler">
+            <summary>
+            Public class for enabling CORS (cross-origin resource sharing) support.
+            This allows other domains to call to the api.
+            http://code.msdn.microsoft.com/Implementing-CORS-support-a677ab5d#content
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Classes.Exceptions.BadRequest(System.String)">
+            <summary>
+            creates an <see cref="T:System.Web.Http.HttpResponseException"/> with a response code of 400
+            and places the reason in the reason header and the body.
+            </summary>
+            <param name="reason">Explanation text for the client.</param>
+            <returns>A new HttpResponseException</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Classes.Exceptions.NotFound(System.String)">
+            <summary>
+            creates an <see cref="T:System.Web.Http.HttpResponseException"/> with a response code of 404
+            and places the reason in the reason header and the body.
+            </summary>
+            <param name="reason">Explanation text for the client.</param>
+            <returns>A new HttpResponseException</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Classes.Exceptions.CreateHttpResponseException(System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Creates an <see cref="T:System.Web.Http.HttpResponseException"/> to be thrown by the api.
+            </summary>
+            <param name="reason">Explanation text, also added to the body.</param>
+            <param name="code">The HTTP status code.</param>
+            <returns>A new <see cref="T:System.Web.Http.HttpResponseException"/></returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.CategoriesController.GetCategories(System.Boolean)">
+            <summary>
+            Gets all indicators and groups them by category. 
+            </summary>
+            <remarks>All indicators are grouped by their category fields (cat1, cat2, cat3). The categories are hierarchial and labeled as follows: (cat1), sub-category (cat2) and aggregate (cat3). For more information on indicator see the Indicators method.</remarks>
+            <example>http://dev.harvestchoice.org/HarvestChoiceApi/0.1/api/categories</example>
+            <returns>A list of all indicators grouped by category. </returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.CategoriesController.AllCategories">
+            <summary>
+            Gets all the distinct cat1 values from the 
+            indicator_metadata table. 
+            </summary>
+            <returns>List of categories</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.CategoriesController.SubCategoriesByCategory(System.String)">
+            <summary>
+            Gets all distinct sub-category (cat2) values from the 
+            indicator_metadata table where cat1 is 
+            <paramref name="cateory"/>.
+            </summary>
+            <param name="category">A category (cat1) value.</param>
+            <returns>List of sub-categories (cat2).</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.CategoriesController.AggregatesBySubCategory(System.String,System.String)">
+            <summary>
+            Gets all distinct aggregate (cat3) values from the
+            indicator_metadata table where cat1 is <paramref name="category"/>
+            and cat2 is <paramref name="subCategory"/>.
+            </summary>
+            <param name="category">A category (cat1) value.</param>
+            <param name="subCategory">A sub-category (cat2) value.</param>
+            <returns>List of aggregates (cat3)</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.CategoriesController.IndicatorsByCategories(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Gets all indicators from the indicator_metadata table where 
+            cat1 is <paramref name="category"/>
+            and cat2 is <paramref name="subCategory"/>
+            and cat3 is <paramref name="aggregate"/>.
+            </summary>
+            <param name="category">A category (cat1) value.</param>
+            <param name="subCategory">A sub-category (cat2) value.</param>
+            <param name="aggregate">A aggregate (cat3) value.</param>
+            <returns>A list of <typeparamref name="indicator_metadata"/> indicators.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.CellValuesController.GetCELL_VALUES(System.Int32)">
+            <summary>
+            Gets all data for a specific cell value.
+            </summary>
+            <param name="id">CELL5M Id.</param>
+            <example>http://dev.harvestchoice.org/HarvestChoiceApi/0.1/api/cellvalues/3267978</example>
+            <returns>All data for a specific cell value.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.CellValuesController.GetCellValues(System.Int32[],System.Int32[],System.String[],System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.String[])">
+            <summary>
+            Gets requested indicator information by aggregating cell values according to provided domains and countries. (SAME as POST)
+            </summary>
+            <example>CellValuesExample</example>
+            <param name="indicatorIds">Required. List of indicator ids. See Indicators for more information.</param>
+            <param name="domainIds">Optional. List of domain ids. See Domains for more information.</param>
+            <param name="countryIds">Optional. List of country ids. See Countries for more information. CountryCollections contain lists of country ids in the ISOs field.</param>
+            <param name="wktGeometry">Optional. Well-known text geometry using web mercator projection.</param>
+            <param name="pivotDomainId">Optional. A single domain id. Used to pivot the data by domain. </param>
+            <param name="returnGeometry">Optional. True or False, to return geometry results (as well-known text) along with tablular data. Only available if pivotDomainId and wktGeometry are null.</param>
+            <param name="groupCountry">Optional. True or False, will group tabular data by country. Must use countryIds parameter. Only available if pivotDomainId and wktGeometry are null.</param>
+            <param name="doMarketAnalysis">Optional. True or False, will conduct a 2,4,6,8 hr market shed analysis for a given point and return tabular data for indicator within each polygon. </param>
+            <param name="regionNames">Required only when using domain 'GAUL Region and District Boundaries'. See Domains for more information on domains. List of region names (maximum of three allowed). See Regions for more information.</param>
+            <returns>Returns a table of indicators based on cell values aggregated on the provided domain and limited by the provided countries. ColumnList describes each column. ValueList contains the table rows.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.CellValuesController.callArcGISGPService(System.String)">
+            <summary>
+            Call to the ArcGIS Geoprocessing Service to calculate the market shed polygons
+            for 2,4,6,8 hour tavel time zones for a given point.
+            </summary>
+            <param name="wktPoint">point of origin for analysis</param>
+            <returns>List of string containing wktPolygon descriptions</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.CountriesController.GetCountries">
+            <summary>
+            Gets all countries within the Harvest Choice area of interest.
+            </summary>
+            <remarks></remarks>
+            <example>http://dev.harvestchoice.org/harvestchoiceapi/0.1/api/countries</example>
+            <returns>A list of country names and identifiers.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.CountryCollectionsController.GetCountryCollections">
+            <summary>
+            Gets all collections of countries. 
+            </summary>
+            <remarks>Countries are grouped into collections. The collections have names (name), identifiers (code), categories (group) and a listing of country identifiers (ISOs). For more information on countries see the Countries method. </remarks>
+            <example>http://dev.harvestchoice.org/HarvestChoiceApi/0.1/api/countrycollections</example>
+            <returns>A list of country collections.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.DomainsController.Getschemata">
+            <summary>
+            Gets all domains. 
+            </summary>
+            <remarks>Domains are spatial layers or groupings of spatial layers that contain various data within the Harvest Choice area of interest. Domains are used to aggregate the grid cell data. For more information on the grid cell data see the CellValues method.</remarks>
+            <example>http://dev.harvestchoice.org/HarvestChoiceApi/0.1/api/domains</example>
+            <returns>A list of all domains.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.DomainsController.Getschema(System.Int32)">
+            <summary>
+            Gets a single domain by its identifier. 
+            </summary>
+            <remarks>Domains are spatial layers or groupings of spatial layers that contain various data within the Harvest Choice area of interest. Domains are used to aggregate the grid cell data. For more information on the grid cell data see the CellValues method.</remarks>
+            <example>http://dev.harvestchoice.org/HarvestChoiceApi/0.1/api/domains</example>
+            <param name="id">Unique indicator identifier.</param>
+            <returns>A domain.</returns>
+        </member>
+        <member name="T:HarvestChoiceApi.Controllers.HelpController">
+            <summary>
+            Controller for viewing automatically generated documentation.
+            </summary>
+        </member>
+        <member name="F:HarvestChoiceApi.Controllers.HelpController.controllers">
+            <summary>
+            The controllers.
+            </summary>
+        </member>
+        <member name="F:HarvestChoiceApi.Controllers.HelpController.currentAssembly">
+            <summary>
+            The current assembly.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.HelpController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Controllers.HelpController"/> class.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.HelpController.Index">
+            <summary>
+            Default view.
+            </summary>
+            <returns>The default view.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.HelpController.Details(System.String)">
+            <summary>
+            Details view
+            </summary>
+            <param name="id">The controller name.</param>
+            <returns>The detailed view of a Controller.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.HelpController.ModelDiagram">
+            <summary>
+            Models diagram view.
+            </summary>
+            <returns>The model diagram view.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.HelpController.GetModelDiagramProvider">
+            <summary>
+            Gets the model diagram provider.
+            </summary>
+            <returns>The current model diagram provider. Returns the default implementation if none is registered.</returns>
+        </member>
+        <member name="T:HarvestChoiceApi.Controllers.IndicatorsController">
+            <summary>
+            API class for accessing indicators
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.IndicatorsController.Getindicator_metadata">
+            <summary>
+            Method for getting all indicators. 
+            </summary>
+            <example>http://dev.harvestchoice.org/HarvestChoiceApi/0.1/api/indicators</example>
+            <returns>A list of all indicators.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.IndicatorsController.Getindicator_metadata(System.Int32)">
+            <summary>
+            Method of obtaining indicators by id.
+            </summary>
+            <example>http://dev.harvestchoice.org/HarvestChoiceApi/0.1/api/indicators/11</example>
+            <param name="id">Unique indicator identifier.</param>
+            <returns>A single indicator.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Controllers.RegionsController.GetRegions">
+            <summary>
+            Gets all Region Names (GAUL 1) within the Harvest Choice area of interest.
+            </summary>
+            <remarks></remarks>
+            <example>http://dev.harvestchoice.org/harvestchoiceapi/0.1/api/regions</example>
+            <returns>A list of region names.</returns>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.Models.ApiActionDescription">
+            <summary>
+            Documentation for an <see cref="T:System.Web.Http.ApiController"/> action
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.Models.ApiActionDescription.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Documentation.Models.ApiActionDescription"/> class.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.Models.ApiActionDescription.#ctor(System.Collections.Generic.IEnumerable{System.Web.Http.Description.ApiDescription})">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Documentation.Models.ApiActionDescription"/> class.
+            </summary>
+            <param name="descriptions">The description.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.Models.ApiActionDescription.#ctor(System.Linq.IGrouping{System.String,System.Web.Http.Description.ApiDescription})">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Documentation.Models.ApiActionDescription"/> class.
+            </summary>
+            <param name="group">The group.</param>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiActionDescription.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiActionDescription.Routes">
+            <summary>
+            Gets or sets the paths.
+            </summary>
+            <value>
+            The paths.
+            </value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiActionDescription.MainRoute">
+            <summary>
+            Gets or sets the main route.
+            </summary>
+            <value>The main route.</value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiActionDescription.Summary">
+            <summary>
+            Gets or sets the summary.
+            </summary>
+            <value>
+            The summary.
+            </value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiActionDescription.Example">
+            <summary>
+            Gets or sets the example.
+            </summary>
+            <value>
+            The example.
+            </value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiActionDescription.Remarks">
+            <summary>
+            Gets or sets the remarks.
+            </summary>
+            <value>
+            The remarks.
+            </value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiActionDescription.Returns">
+            <summary>
+            Gets or sets the returns.
+            </summary>
+            <value>
+            The returns.
+            </value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiActionDescription.SampleRequests">
+            <summary>
+            Gets or sets the sample requests.
+            </summary>
+            <value>The sample requests.</value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiActionDescription.SampleResponses">
+            <summary>
+            Gets or sets the sample responses.
+            </summary>
+            <value>The sample responses.</value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiActionDescription.ParameterDescriptions">
+            <summary>
+            Gets or sets the parameter descriptions.
+            </summary>
+            <value>
+            The parameter descriptions.
+            </value>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.Models.ApiActionSample">
+            <summary>
+            Sample request/response for api actions
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.Models.ApiActionSample.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Documentation.Models.ApiActionSample"/> class.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.Models.ApiActionSample.#ctor(System.Net.Http.Formatting.MediaTypeFormatter,System.Web.Http.Description.ApiDescription,HarvestChoiceApi.Documentation.Models.ApiActionSampleDirection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Documentation.Models.ApiActionSample"/> class.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="apiDescription">The API description.</param>
+            <param name="sampleDirection">The sample direction.</param>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiActionSample.MediaType">
+            <summary>
+            Gets or sets the type of the media.
+            </summary>
+            <value>The type of the media.</value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiActionSample.Sample">
+            <summary>
+            Gets or sets the sample.
+            </summary>
+            <value>The sample.</value>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.Models.ApiActionSampleDirection">
+            <summary>
+            The api action direction
+            </summary>
+        </member>
+        <member name="F:HarvestChoiceApi.Documentation.Models.ApiActionSampleDirection.Request">
+            <summary>
+            An HTTP request
+            </summary>
+        </member>
+        <member name="F:HarvestChoiceApi.Documentation.Models.ApiActionSampleDirection.Response">
+            <summary>
+            An HTTP response
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.Models.ApiControllerDescription">
+            <summary>
+            Documentation for an <see cref="T:System.Web.Http.ApiController"/>
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiControllerDescription.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiControllerDescription.Actions">
+            <summary>
+            Gets or sets the actions.
+            </summary>
+            <value>
+            The actions.
+            </value>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.ViewModels.ApiExplorerDetailsViewModel">
+            <summary>
+            Viewmodel for the detailed API view.
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.ViewModels.ApiExplorerViewModel">
+            <summary>
+            Viewmodel for the general API view.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.ViewModels.ApiExplorerViewModel.ApiControllerDescriptions">
+            <summary>
+            Gets or sets the API descriptions.
+            </summary>
+            <value>
+            The API descriptions.
+            </value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.ViewModels.ApiExplorerViewModel.CurrentAssembly">
+            <summary>
+            Gets or sets the current assembly.
+            </summary>
+            <value>
+            The current assembly.
+            </value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.ViewModels.ApiExplorerDetailsViewModel.ApiControllerDescription">
+            <summary>
+            Gets or sets the API controller description.
+            </summary>
+            <value>
+            The API controller description.
+            </value>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.Models.ApiReturnTypeAttribute">
+            <summary>
+            Attribute for setting the action return type for the documentation provider
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.Models.ApiReturnTypeAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Documentation.Models.ApiReturnTypeAttribute"/> class.
+            </summary>
+            <param name="returnType">Type of the return.</param>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiReturnTypeAttribute.ReturnType">
+            <summary>
+            Gets or sets the type of the return.
+            </summary>
+            <value>The type of the return.</value>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.Models.ApiRouteDescription">
+            <summary>
+            Documentation for an API route
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.Models.ApiRouteDescription.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Documentation.Models.ApiRouteDescription"/> class.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.Models.ApiRouteDescription.#ctor(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Documentation.Models.ApiRouteDescription"/> class.
+            </summary>
+            <param name="apiDescription">The API description.</param>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiRouteDescription.Method">
+            <summary>
+            Gets or sets the method.
+            </summary>
+            <value>
+            The method.
+            </value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Models.ApiRouteDescription.Path">
+            <summary>
+            Gets or sets the path.
+            </summary>
+            <value>
+            The path.
+            </value>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.Interfaces.IModelDiagramProvider">
+            <summary>
+            The model diagram provider interface
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Interfaces.IModelDiagramProvider.Models">
+            <summary>
+            Gets the models.
+            </summary>
+            <value>The models.</value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Interfaces.IModelDiagramProvider.Image">
+            <summary>
+            Gets the path to the model diagram image
+            </summary>
+            <value>The model diagram image.</value>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.ViewModels.ModelDiagramViewModel">
+            <summary>
+            Viewmodel for the general API view.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.ViewModels.ModelDiagramViewModel.ModelDiagramPath">
+            <summary>
+            Gets or sets the model diagram path.
+            </summary>
+            <value>The model diagram path.</value>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.Functions.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            NOTE: Copied from the ASP.NET Web Stack 17. November 2012
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.Functions.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.Functions.SampleGeneratorService">
+            <summary>
+            Ther sample generator service
+            </summary>
+        </member>
+        <member name="F:HarvestChoiceApi.Documentation.Functions.SampleGeneratorService.Singleton">
+            <summary>
+            The singleton
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.Functions.SampleGeneratorService.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:HarvestChoiceApi.Documentation.Functions.SampleGeneratorService"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.Functions.SampleGeneratorService.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:HarvestChoiceApi.Documentation.Functions.SampleGeneratorService.SampleObjects"/>. If no sample object is found, it will try to create one using <see cref="T:HarvestChoiceApi.Documentation.Functions.ObjectGenerator"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.Functions.SampleGeneratorService.TryFormatJson(System.String)">
+            <summary>
+            Tries to format the string as indented json.
+            </summary>
+            <param name="str">The string.</param>
+            <returns>Indented json.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.Functions.SampleGeneratorService.TryFormatXml(System.String)">
+            <summary>
+            Tries to format the string as indented XML.
+            </summary>
+            <param name="str">The string.</param>
+            <returns>Indented XML.</returns>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Functions.SampleGeneratorService.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.Functions.SampleGeneratorService.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.XmlCommentDocumentationProvider">
+            <summary>
+            Documentation provider for XML comments.
+            </summary>
+        </member>
+        <member name="F:HarvestChoiceApi.Documentation.XmlCommentDocumentationProvider.MethodExpression">
+            <summary>
+            XPath expression for finding methods.
+            </summary>
+        </member>
+        <member name="F:HarvestChoiceApi.Documentation.XmlCommentDocumentationProvider.NullableTypeNameRegex">
+            <summary>
+            Regular expression for determining nullable types.
+            </summary>
+        </member>
+        <member name="F:HarvestChoiceApi.Documentation.XmlCommentDocumentationProvider.documentNavigators">
+            <summary>
+            The xml document navigator.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.XmlCommentDocumentationProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Documentation.XmlCommentDocumentationProvider"/> class.
+            </summary> 
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.XmlCommentDocumentationProvider.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Documentation.XmlCommentDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPaths">The document paths.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.XmlCommentDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>
+            Gets the action documentation.
+            </summary>
+            <param name="actionDescriptor">The action descriptor.</param>
+            <returns>The documentation for the action as JSON.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.XmlCommentDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpParameterDescriptor)">
+            <summary>
+            Gets the parameter documentation.
+            </summary>
+            <param name="parameterDescriptor">The parameter descriptor.</param>
+            <returns>The summary documentation for the parameter as a string.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.XmlCommentDocumentationProvider.GetMemberName(System.Reflection.MethodInfo)">
+            <summary>
+            Gets the name of the member.
+            </summary>
+            <param name="method">The method.</param>
+            <returns>The member name as a string.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.XmlCommentDocumentationProvider.ProcessTypeName(System.String)">
+            <summary>
+            Processes the name of the type.
+            </summary>
+            <param name="typeName">Name of the type.</param>
+            <returns>The process type name as a string.</returns>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.XmlCommentDocumentationProvider.GetMemberNode(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>
+            Gets the member node.
+            </summary>
+            <param name="actionDescriptor">The action descriptor.</param>
+            <returns>The xpath navigator for the member node.</returns>
+        </member>
+        <member name="T:HarvestChoiceApi.Documentation.YumlModelDiagramProvider">
+            <summary>
+            A Yuml-based model diagram provider
+            </summary>
+        </member>
+        <member name="F:HarvestChoiceApi.Documentation.YumlModelDiagramProvider.yumlFactory">
+            <summary>
+            The yuml generator
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.YumlModelDiagramProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Documentation.YumlModelDiagramProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.YumlModelDiagramProvider.#ctor(System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Documentation.YumlModelDiagramProvider"/> class.
+            </summary>
+            <param name="models">The models.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.YumlModelDiagramProvider.#ctor(System.Collections.Generic.IEnumerable{System.Type},Yuml.Net.DetailLevel[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:HarvestChoiceApi.Documentation.YumlModelDiagramProvider"/> class.
+            </summary>
+            <param name="models">The models.</param>
+            <param name="detailLevels">The detail levels.</param>
+        </member>
+        <member name="M:HarvestChoiceApi.Documentation.YumlModelDiagramProvider.GetYumlFactory(System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Gets the yUML factory.
+            </summary>
+            <param name="models">The models.</param>
+            <returns>The registered type for IYumlFactory, otherwise returns the default implementation.</returns>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.YumlModelDiagramProvider.Models">
+            <summary>
+            Gets the models.
+            </summary>
+            <value>The models.</value>
+        </member>
+        <member name="P:HarvestChoiceApi.Documentation.YumlModelDiagramProvider.Image">
+            <summary>
+            Gets the path to the model diagram image
+            </summary>
+            <value>The model diagram image.</value>
+        </member>
+        <member name="T:HarvestChoiceApi.Models.Category">
+            <summary>
+            Category class to hold the nested structure of indicators grouped
+            by category.
+            </summary>
+        </member>
+        <member name="P:HarvestChoiceApi.Models.Indicator.Id">
+            <summary>
+            Unique identifier
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Models.CELL_VALUES">
+            <summary>
+            Extention of the Entity Framework create class of the CELL_VALUES table.
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Models.CountryCollection">
+            <summary>
+            Class used to format the web response of the <see cref="!:CountryCollectionController"/>
+            GetCountryCollections() method.
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Models.Country">
+            <summary>
+            Country class to hold the country names (ISO3).
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Models.Region">
+            <summary>
+            Region class to hold the region names (GAUL1).
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Models.District">
+            <summary>
+            District class to hold the district names (GAUL2).
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Models.RegionDistrict">
+            <summary>
+            RegionDistrict class to hold district names (GAUL2) by region (GAUL1).
+            </summary>
+        </member>
+        <member name="T:HarvestChoiceApi.Models.CountryRegion">
+            <summary>
+            CountryRegion class to hold country names (ISO) by region (GAUL1).
+            </summary>
+        </member>
+    </members>
+</doc>

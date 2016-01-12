@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="HC_WEB_DB">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="CANDACE\MSSQL2012:CANDACE\sparadee">
+          <Created>2014-03-13T08:13:04.2482932-07:00</Created>
+          <Type>SQL</Type>
+          <Server>CANDACE\MSSQL2012</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="CANDACE\MSSQL2012EXPRESS:CANDACE\sparadee">
+          <Created>2013-12-16T09:36:11.6537391-08:00</Created>
+          <Type>SQL</Type>
+          <Server>CANDACE\MSSQL2012EXPRESS</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>HC_WEB_DB</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="FullRegionDistrictQuery.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012EXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012EXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>FullRegionDistrictQuery.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Gaul2008_domain.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Gaul2008_domain.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Gaul2012_domain.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Gaul2012_domain.sql</FullPath>
+        </FileNode>
+        <FileNode Name="UpdateGaul2012.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>UpdateGaul2012.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# SQL Server Management Studio Solution File, Format Version 11.00
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "HC_WEB_DB", "HC_WEB_DB.ssmssqlproj", "{687F7EE8-A8D9-4065-B22D-86411CFD4FBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{687F7EE8-A8D9-4065-B22D-86411CFD4FBF}.Default|Default.ActiveCfg = Default
+		{7C00783E-F80A-49D4-98E3-1A95472E6E28}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

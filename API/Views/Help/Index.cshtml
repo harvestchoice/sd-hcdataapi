@@ -1,0 +1,67 @@
+﻿@model HarvestChoiceApi.Documentation.ViewModels.ApiExplorerViewModel
+
+@{
+    ViewBag.Title = "Introduction";
+    ViewBag.Header = "Introduction";
+    Layout = "~/Views/Help/_HelpLayout.cshtml";
+}
+
+<section class="content-wrapper main-content clear-fix">
+    <h1>Introduction</h1>
+    <p>This is the documentation for the Harvest Choice Agricultural Data API. The API is currently under development, as is the documentation.</p>
+    <p>
+    The Harvest Choice Agricultural Data API is a framework that allows easy access to Harvest Choice data and services 
+    via the web directly over HTTP allowing access to a broad range of clients, including browsers and mobile devices. This API was built 
+    using ASP.NET MVC 4 Web API. It is connected to the Harvest Choice database using Entity Framework. In addition, the API leverages 
+    ESRI ArcGIS Server technology providing spatial analysis capabilities.  
+    </p>
+    <p>
+    The Harvest Choice Agricultural Data API provides a number of methods that provide access to over one hundred layers of spatially-explicit 
+    agriculatural, demographic and climate data for sub-Saharan Africa. Use the API to query and extract information from fine-resolution data layers based 
+    on 10km X 10km grid cells covering the sub-Saharan African region. 
+    </p>
+    <h2>Methods</h2>
+    The following is an overview of the methods available through the Harvest Choice Web API:
+    <h3>CellValues</h3>
+    <p>The CellValues method provides access to the Harvest Choice data, which contains over a hundred layers of spatially-explicit data for
+    sub-Saharan Africa based on a 10km X 10km cell grid. In order to request specific data sets from the CellValues method, several 
+    methods have been provided in the API to assist in developing search criteria.</p>
+    <p>The data provided through the CellValues method can be queried using a number of search criteria:
+        <ol>
+            <li>The grid cell id</li>
+            <li>A spatial location (point, line or polygon)</li>
+            <li>An indicator (specific layer)</li>
+        </ol>
+    </p>
+    <p>The data can be aggregated in a number of ways:
+        <ol>
+            <li>By country</li>
+            <li>By domain (spatial layers)</li>
+        </ol>
+    </p>
+    <h3>Indicators & Categories</h3>
+    <p>The Indicators and Categories methods are similar in they both provide a list of available indicators. Indicators are specific datasets which contain data
+        for sub-Saharan Africa  based on a 10km X 10km cell grid. Some example indicators are: Average Grow Period, Rural Population 2005, Coffee Production. The 
+        Indicators method has a GET for all indicators or a single indicator given an indicator id. The Categories method has a single GET which provides all 
+        indicators grouped by categories. 
+    </p>
+    <h3>Countries & CountryCollections</h3>
+    <p>The Countries and CountryCollections methods are similar in they both provide a list of available countries within sub-Saharan Africa.  The 
+        Countries method has a single GET for all countries. The CountryCollections method has a single GET which provides several groupings of
+        countries for various interests. Countries are used to aggregate the grid cell data.
+    </p>
+    <h3>Domains</h3>
+    The Domains method has a GET for all domains or a single domain given a domain id. Domains are spatial layers or groupings of spatial layers that contain various 
+    data within the Harvest Choice area of interest. Domains are used to aggregate the grid cell data.
+    <p></p>
+    <p>&nbsp;</p>
+    <h5>Changelog</h5>
+    <ol>
+        <li>
+            <h6>0.1</h6>
+            <p>
+                This is the first release of the API, and it is currently in development.
+            </p>
+        </li>
+    </ol>
+</section>

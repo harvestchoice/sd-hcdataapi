@@ -1,0 +1,107 @@
+﻿@model HarvestChoiceApi.Documentation.ViewModels.ApiExplorerViewModel
+
+@{
+    ViewBag.Title = "Example";
+    ViewBag.Header = "Example";
+    Layout = "~/Views/Help/_HelpLayout.cshtml";
+}
+
+<section class="content-wrapper main-content clear-fix">
+    <h1>CellValues Method Examples</h1>
+
+        <div class="actions">
+            <header>
+                <table class="routes">
+                    <tr>
+                        <td>Javascript</td>
+                    </tr>
+                </table>
+                <p>Examples using the Javascript language.</p>
+            </header>
+            <div class="action">
+                <table>
+                    <tr>
+                        <td>Description: Under development.</td>
+                    </tr>
+                </table>
+                <h5>Usage examples:</h5>
+                <div class="sampleResponses">
+                    <ul>
+                        <li><a href="#sample1">Sample 1</a></li>
+                        <li><a href="#sample2">Sample 2</a></li>
+                    </ul>
+                    <div id="sample1" class="ui-tabs-panel">
+                        The below example requests the following information from the CellValues method using the jQuery ajax request method:
+                        <br />
+                        <blockquote>
+                            Indicators (12, 272):
+                            <br />
+                            <blockquote>
+                                Rural population 2005 (Id = 12)<br />
+                                Var. grow period (Id = 197)<br />
+                            </blockquote>
+                            <br />
+                            Domain (1):<br />
+                            <blockquote>
+                                AEZ-5 (Id = 1)<br />
+                            </blockquote>
+                        </blockquote>
+                        <code><pre>
+        $.ajax({
+            type: "GET",
+            url: "http://dev.harvestchoice.org/HarvestChoiceApi/0.1/api/CellValues",
+            data: {indicatorIds: [12,272], domainIds: [1]},
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                alert(result);
+            }
+        });</pre></code>
+                    </div>
+                    <div id="sample2" class="ui-tabs-panel">
+                        <pre>Under development.</pre>
+                    </div>
+                </div>
+            </div>
+
+            <header>
+        <table class="routes">
+            <tr><td>REST</td></tr>
+        </table>
+         <p>Examples using REST.</p>
+        </header>
+         <div class="action">
+            <table>
+                <tr><td>Description: Under development.</td></tr>
+            </table>
+            <h5>Usage examples:</h5>
+                <div class="sampleResponses">
+                    <ul>
+                        <li><a href="#sample1">Sample 1</a></li>
+                        <li><a href="#sample2">Sample 2</a></li>
+                    </ul>
+                    <div id="sample1" class="ui-tabs-panel">
+                        The below example requests: <br />
+                            <blockquote>
+                            Indicators (266, 197, 78, 139): <br /><blockquote>
+                            TPOV_PT125 (Total $1.25 poverty hcr.) Id: 266<br />
+                            COTT_R_Y (Rainfed cotton yield) Id: 197<br />
+                            COTT_R (Cotton prod.) Id: 78<br />
+                            COTT_I_H (Irr. cotton area) Id: 139<br /></blockquote>
+                            <br/>
+                             Domain (8):<br /><blockquote>
+                            AEZs and Rural Pop. Density  Id: 8<br /></blockquote>
+                                </blockquote>
+
+                        <code>
+http://dev.harvestchoice.org/HarvestChoiceApi/0.1/api/cellvalues?indicatorIds=266&indicatorIds=197&indicatorIds=78_
+&indicatorIds=139&domainIds=8
+                        </code>
+
+                    </div>
+                    <div id="sample2" class="ui-tabs-panel"><pre>Under development.</pre></div>
+                </div>
+        </div>
+    </div>
+
+</section>

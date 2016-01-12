@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="HC_WEB_DB_2">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="CANDACE\HCTEAM13:CANDACE\sparadee">
+          <Created>2014-04-28T07:49:50.0851405-07:00</Created>
+          <Type>SQL</Type>
+          <Server>CANDACE\HCTEAM13</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>master</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="CANDACE\MSSQL2012:CANDACE\sparadee">
+          <Created>2014-04-15T10:00:49.285717-07:00</Created>
+          <Type>SQL</Type>
+          <Server>CANDACE\MSSQL2012</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="SPATIALDEV-PC\ALIENSQL:CANDACE\sparadee">
+          <Created>2014-04-01T21:04:54.8665586-07:00</Created>
+          <Type>SQL</Type>
+          <Server>SPATIALDEV-PC\ALIENSQL</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="(0)Instructions.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:SPATIALDEV-PC\ALIENSQL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>SPATIALDEV-PC\ALIENSQL</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>(0)Instructions.sql</FullPath>
+        </FileNode>
+        <FileNode Name="(1)DataModelRedesign.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>(1)DataModelRedesign.sql</FullPath>
+        </FileNode>
+        <FileNode Name="(10)BacklogUpdates.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>(10)BacklogUpdates.sql</FullPath>
+        </FileNode>
+        <FileNode Name="(2)MigrateIndicators.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>(2)MigrateIndicators.sql</FullPath>
+        </FileNode>
+        <FileNode Name="(3)MigrateCell5M.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>(3)MigrateCell5M.sql</FullPath>
+        </FileNode>
+        <FileNode Name="(4)MigrateCellValues.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>(4)MigrateCellValues.sql</FullPath>
+        </FileNode>
+        <FileNode Name="(5)SchefView.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\HCTEAM13:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\HCTEAM13</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>(5)SchefView.sql</FullPath>
+        </FileNode>
+        <FileNode Name="(6)ETL.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>(6)ETL.sql</FullPath>
+        </FileNode>
+        <FileNode Name="(7)Toppr.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>(7)Toppr.sql</FullPath>
+        </FileNode>
+        <FileNode Name="(8)Indexes.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>(8)Indexes.sql</FullPath>
+        </FileNode>
+        <FileNode Name="(9)StoreProceedures.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>(9)StoreProceedures.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Misc.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Misc.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Working.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CANDACE\MSSQL2012:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CANDACE\MSSQL2012</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Working.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

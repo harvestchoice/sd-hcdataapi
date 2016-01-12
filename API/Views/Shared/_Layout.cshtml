@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="SHORTCUT ICON" href="@Url.Content("~/favicon.ico")"/>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/fonts")
+    @Styles.Render("~/fonts2")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/site")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @RenderBody()    
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

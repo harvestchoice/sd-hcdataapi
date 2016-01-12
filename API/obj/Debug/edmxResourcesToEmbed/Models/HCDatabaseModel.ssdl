@@ -1,0 +1,1411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HC_WEB_DB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="HC_WEB_DBStoreContainer">
+    <EntitySet Name="CELL_VALUES" EntityType="HC_WEB_DB.Store.CELL_VALUES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CELL_VALUES_old" EntityType="HC_WEB_DB.Store.CELL_VALUES_old" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CELL5M" EntityType="HC_WEB_DB.Store.CELL5M" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="classification" EntityType="HC_WEB_DB.Store.classification" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="collection" EntityType="HC_WEB_DB.Store.collection" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="collection_group" EntityType="HC_WEB_DB.Store.collection_group" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="continuous_classification" EntityType="HC_WEB_DB.Store.continuous_classification" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="country" EntityType="HC_WEB_DB.Store.country" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="country_collection" EntityType="HC_WEB_DB.Store.country_collection" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="discrete_classification" EntityType="HC_WEB_DB.Store.discrete_classification" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="domain_country_results" EntityType="HC_WEB_DB.Store.domain_country_results" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="domain_variable" EntityType="HC_WEB_DB.Store.domain_variable" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="drupal_metadata" EntityType="HC_WEB_DB.Store.drupal_metadata" store:Type="Tables" store:Schema="dbo" store:Name="drupal_metadata">
+      <DefiningQuery>SELECT 
+      [drupal_metadata].[id] AS [id], 
+      [drupal_metadata].[fk_indicator_id] AS [fk_indicator_id], 
+      [drupal_metadata].[drupal_subtopic] AS [drupal_subtopic], 
+      [drupal_metadata].[drupal_keywords] AS [drupal_keywords], 
+      [drupal_metadata].[drupal_commodity] AS [drupal_commodity], 
+      [drupal_metadata].[drupal_author] AS [drupal_author]
+      FROM [dbo].[drupal_metadata] AS [drupal_metadata]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="indicator_metadata" EntityType="HC_WEB_DB.Store.indicator_metadata" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="schema" EntityType="HC_WEB_DB.Store.schema" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="schema_domain" EntityType="HC_WEB_DB.Store.schema_domain" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tmp_build_cell_values" EntityType="HC_WEB_DB.Store.tmp_build_cell_values" store:Type="Tables" store:Schema="dbo" store:Name="tmp_build_cell_values">
+      <DefiningQuery>SELECT 
+      [tmp_build_cell_values].[ID] AS [ID], 
+      [tmp_build_cell_values].[select_columns] AS [select_columns], 
+      [tmp_build_cell_values].[unpivot_columns] AS [unpivot_columns], 
+      [tmp_build_cell_values].[num_inserted_rows] AS [num_inserted_rows], 
+      [tmp_build_cell_values].[_count] AS [_count]
+      FROM [dbo].[tmp_build_cell_values] AS [tmp_build_cell_values]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Variable_Inventory" EntityType="HC_WEB_DB.Store.Variable_Inventory" store:Type="Tables" store:Schema="dbo" store:Name="Variable_Inventory">
+      <DefiningQuery>SELECT 
+      [Variable_Inventory].[column_name] AS [column_name], 
+      [Variable_Inventory].[micro_label] AS [micro_label], 
+      [Variable_Inventory].[short_label] AS [short_label], 
+      [Variable_Inventory].[full_label] AS [full_label], 
+      [Variable_Inventory].[long_description] AS [long_description], 
+      [Variable_Inventory].[category_1] AS [category_1], 
+      [Variable_Inventory].[category_2] AS [category_2], 
+      [Variable_Inventory].[category_3] AS [category_3], 
+      [Variable_Inventory].[item] AS [item], 
+      [Variable_Inventory].[unit] AS [unit], 
+      [Variable_Inventory].[decimal_places] AS [decimal_places], 
+      [Variable_Inventory].[year_1] AS [year_1], 
+      [Variable_Inventory].[end_year_1] AS [end_year_1], 
+      [Variable_Inventory].[extent] AS [extent], 
+      [Variable_Inventory].[classification_type] AS [classification_type], 
+      [Variable_Inventory].[agg_type] AS [agg_type], 
+      [Variable_Inventory].[agg_formula] AS [agg_formula], 
+      [Variable_Inventory].[table_name] AS [table_name], 
+      [Variable_Inventory].[column_label] AS [column_label], 
+      [Variable_Inventory].[table_unique_id] AS [table_unique_id], 
+      [Variable_Inventory].[tafkas_domain] AS [tafkas_domain], 
+      [Variable_Inventory].[tafkas_summary] AS [tafkas_summary], 
+      [Variable_Inventory].[forweb] AS [forweb], 
+      [Variable_Inventory].[agmarketfinder] AS [agmarketfinder], 
+      [Variable_Inventory].[droppr] AS [droppr], 
+      [Variable_Inventory].[map_gallery] AS [map_gallery], 
+      [Variable_Inventory].[source] AS [source], 
+      [Variable_Inventory].[micro_source] AS [micro_source], 
+      [Variable_Inventory].[data_worker] AS [data_worker], 
+      [Variable_Inventory].[id] AS [id], 
+      [Variable_Inventory].[createdby] AS [createdby], 
+      [Variable_Inventory].[createddate] AS [createddate], 
+      [Variable_Inventory].[published] AS [published], 
+      [Variable_Inventory].[drupal_subtopic] AS [drupal_subtopic], 
+      [Variable_Inventory].[drupal_keywords] AS [drupal_keywords], 
+      [Variable_Inventory].[drupal_commodity] AS [drupal_commodity], 
+      [Variable_Inventory].[last_processed] AS [last_processed], 
+      [Variable_Inventory].[processing_comment] AS [processing_comment], 
+      [Variable_Inventory].[version] AS [version], 
+      [Variable_Inventory].[caveat] AS [caveat], 
+      [Variable_Inventory].[drupal_author] AS [drupal_author], 
+      [Variable_Inventory].[for_drupal] AS [for_drupal], 
+      [Variable_Inventory].[end_year] AS [end_year], 
+      [Variable_Inventory].[year] AS [year]
+      FROM [dbo].[Variable_Inventory] AS [Variable_Inventory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vCountryList" EntityType="HC_WEB_DB.Store.vCountryList" store:Type="Views" store:Schema="dbo" store:Name="vCountryList">
+      <DefiningQuery>SELECT 
+      [vCountryList].[name] AS [name], 
+      [vCountryList].[label] AS [label], 
+      [vCountryList].[id] AS [id]
+      FROM [dbo].[vCountryList] AS [vCountryList]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_collection_group_collection" Association="HC_WEB_DB.Store.FK_collection_group_collection">
+      <End Role="collection" EntitySet="collection" />
+      <End Role="collection_group" EntitySet="collection_group" />
+    </AssociationSet>
+    <AssociationSet Name="fk_continuous_classification_classification" Association="HC_WEB_DB.Store.fk_continuous_classification_classification">
+      <End Role="classification" EntitySet="classification" />
+      <End Role="continuous_classification" EntitySet="continuous_classification" />
+    </AssociationSet>
+    <AssociationSet Name="fk_continuous_classification_domain_variable" Association="HC_WEB_DB.Store.fk_continuous_classification_domain_variable">
+      <End Role="domain_variable" EntitySet="domain_variable" />
+      <End Role="continuous_classification" EntitySet="continuous_classification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_country_collection_collection" Association="HC_WEB_DB.Store.FK_country_collection_collection">
+      <End Role="collection" EntitySet="collection" />
+      <End Role="country_collection" EntitySet="country_collection" />
+    </AssociationSet>
+    <AssociationSet Name="FK_country_collection_country" Association="HC_WEB_DB.Store.FK_country_collection_country">
+      <End Role="country" EntitySet="country" />
+      <End Role="country_collection" EntitySet="country_collection" />
+    </AssociationSet>
+    <AssociationSet Name="fk_discrete_classification_classification" Association="HC_WEB_DB.Store.fk_discrete_classification_classification">
+      <End Role="classification" EntitySet="classification" />
+      <End Role="discrete_classification" EntitySet="discrete_classification" />
+    </AssociationSet>
+    <AssociationSet Name="fk_discrete_classification_domain_variable" Association="HC_WEB_DB.Store.fk_discrete_classification_domain_variable">
+      <End Role="domain_variable" EntitySet="domain_variable" />
+      <End Role="discrete_classification" EntitySet="discrete_classification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_domain_country_results_country" Association="HC_WEB_DB.Store.FK_domain_country_results_country">
+      <End Role="country" EntitySet="country" />
+      <End Role="domain_country_results" EntitySet="domain_country_results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_domain_country_results_schema" Association="HC_WEB_DB.Store.FK_domain_country_results_schema">
+      <End Role="schema" EntitySet="schema" />
+      <End Role="domain_country_results" EntitySet="domain_country_results" />
+    </AssociationSet>
+    <AssociationSet Name="fk_schema_domain_domain_variable" Association="HC_WEB_DB.Store.fk_schema_domain_domain_variable">
+      <End Role="domain_variable" EntitySet="domain_variable" />
+      <End Role="schema_domain" EntitySet="schema_domain" />
+    </AssociationSet>
+    <AssociationSet Name="fk_schema_domain_schema" Association="HC_WEB_DB.Store.fk_schema_domain_schema">
+      <End Role="schema" EntitySet="schema" />
+      <End Role="schema_domain" EntitySet="schema_domain" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CELL_VALUES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CELL5M" Type="int" Nullable="false" />
+    <Property Name="column_name" Type="nvarchar" MaxLength="30" />
+    <Property Name="value" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CELL_VALUES_old">
+    <Key>
+      <PropertyRef Name="CELL5M" />
+    </Key>
+    <Property Name="AN05_TLU" Type="float" />
+    <Property Name="RPOV_PT075" Type="float" />
+    <Property Name="LGP_AVG" Type="float" />
+    <Property Name="AREA_CR_LC" Type="float" />
+    <Property Name="PN05_URB" Type="float" />
+    <Property Name="AD05_CATT" Type="float" />
+    <Property Name="ALLOC_ID" Type="nvarchar" MaxLength="8" />
+    <Property Name="TPOV_PT125" Type="float" />
+    <Property Name="PN05_TOT" Type="float" />
+    <Property Name="FS_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="TT_20K" Type="float" />
+    <Property Name="AREA_URB" Type="float" />
+    <Property Name="AEZ_CODE" Type="float" />
+    <Property Name="AREA_IRR" Type="float" />
+    <Property Name="FS_CODE" Type="float" />
+    <Property Name="SUIT_FACT" Type="float" />
+    <Property Name="MSH_250K_ID" Type="float" />
+    <Property Name="MSH_20K_ID" Type="float" />
+    <Property Name="RPOV_NR125" Type="float" />
+    <Property Name="CELL5M" Type="int" Nullable="false" />
+    <Property Name="MSH_50K_TX" Type="nvarchar" MaxLength="60" />
+    <Property Name="AD05_SHEE" Type="float" />
+    <Property Name="SUIT_DESCR" Type="nvarchar" MaxLength="255" />
+    <Property Name="TT_PORT" Type="float" />
+    <Property Name="RPOV_PT125" Type="float" />
+    <Property Name="AN05_CHIC" Type="float" />
+    <Property Name="ELEVATION" Type="float" />
+    <Property Name="AN05_PIG" Type="float" />
+    <Property Name="PSH_ISO3" Type="nvarchar" MaxLength="3" />
+    <Property Name="AN05_GOAT" Type="float" />
+    <Property Name="AEZ5_CLAS" Type="nvarchar" MaxLength="30" />
+    <Property Name="AREA_WBODY" Type="float" />
+    <Property Name="SVY_POV" Type="text" />
+    <Property Name="TPOV_NR125" Type="float" />
+    <Property Name="AEZ_TEXT" Type="nvarchar" MaxLength="50" />
+    <Property Name="TT_100K" Type="float" />
+    <Property Name="PD_RU05" Type="float" />
+    <Property Name="AD05_LU" Type="float" />
+    <Property Name="PRE_AVG" Type="float" />
+    <Property Name="MSH_500K_ID" Type="float" />
+    <Property Name="PD_RU00" Type="float" />
+    <Property Name="AEZ8_CLAS" Type="nvarchar" MaxLength="60" />
+    <Property Name="RPOV_NR200" Type="float" />
+    <Property Name="AN05_LU" Type="float" />
+    <Property Name="MAJ_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="CVALP_CAP" Type="float" />
+    <Property Name="MSH_50K_ID" Type="float" />
+    <Property Name="RPOV_PT200" Type="float" />
+    <Property Name="PN05_RUR" Type="float" />
+    <Property Name="PN00_TOT" Type="float" />
+    <Property Name="PSH_ID" Type="float" />
+    <Property Name="RPOV_NR075" Type="float" />
+    <Property Name="AD05_TLU" Type="float" />
+    <Property Name="PSH_TX" Type="nvarchar" MaxLength="60" />
+    <Property Name="MSH_100K_ID" Type="float" />
+    <Property Name="PRE_CV" Type="float" />
+    <Property Name="TT_500K" Type="float" />
+    <Property Name="AD05_GOAT" Type="float" />
+    <Property Name="AN05_CATT" Type="float" />
+    <Property Name="PN00_RUR" Type="float" />
+    <Property Name="AD05_CHIC" Type="float" />
+    <Property Name="TPOV_PT075" Type="float" />
+    <Property Name="SUIT_INDEX" Type="float" />
+    <Property Name="AREA_COOKED" Type="float" />
+    <Property Name="AN05_SHEE" Type="float" />
+    <Property Name="AREA_TOTAL" Type="float" />
+    <Property Name="AEZ16_CLAS" Type="nvarchar" MaxLength="50" />
+    <Property Name="AREA_PROT" Type="float" />
+    <Property Name="TPOV_NR075" Type="float" />
+    <Property Name="PN00_URB" Type="float" />
+    <Property Name="ISO3" Type="nvarchar" MaxLength="3" />
+    <Property Name="LAST_UPDATE" Type="nvarchar" MaxLength="50" />
+    <Property Name="TPOV_PT200" Type="float" />
+    <Property Name="LGP_TEXT" Type="nvarchar" MaxLength="50" />
+    <Property Name="LGP_CV" Type="float" />
+    <Property Name="TT_250K" Type="float" />
+    <Property Name="TPOV_NR200" Type="float" />
+    <Property Name="AD05_PIG" Type="float" />
+    <Property Name="CVALP" Type="float" />
+    <Property Name="H_UNIT" Type="varchar" MaxLength="6" />
+    <Property Name="WHEA_I_R" Type="float" />
+    <Property Name="SORG_R_R" Type="float" />
+    <Property Name="WHEA_R" Type="float" />
+    <Property Name="OPUL_I_R" Type="float" />
+    <Property Name="OFIB_R_R" Type="float" />
+    <Property Name="OTHE_I_R" Type="float" />
+    <Property Name="BEAN_R_R" Type="float" />
+    <Property Name="COFF_R_R" Type="float" />
+    <Property Name="OFIB_I_R" Type="float" />
+    <Property Name="OOIL_R_R" Type="float" />
+    <Property Name="SOYB_R_R" Type="float" />
+    <Property Name="BANP_R" Type="float" />
+    <Property Name="COTT_I_R" Type="float" />
+    <Property Name="RICE_R_R" Type="float" />
+    <Property Name="RICE_I_R" Type="float" />
+    <Property Name="RICE_R" Type="float" />
+    <Property Name="COTT_R_R" Type="float" />
+    <Property Name="MAIZ_R_R" Type="float" />
+    <Property Name="SOYB_I_R" Type="float" />
+    <Property Name="BARL_R_R" Type="float" />
+    <Property Name="OTHE_R_R" Type="float" />
+    <Property Name="MAIZ_I_R" Type="float" />
+    <Property Name="SUGC_R_R" Type="float" />
+    <Property Name="CASS_R" Type="float" />
+    <Property Name="SWPY_I_R" Type="float" />
+    <Property Name="POTA_I_R" Type="float" />
+    <Property Name="OOIL_I_R" Type="float" />
+    <Property Name="SWPY_R" Type="float" />
+    <Property Name="SORG_I_R" Type="float" />
+    <Property Name="BEAN_I_R" Type="float" />
+    <Property Name="GROU_R_R" Type="float" />
+    <Property Name="BANP_R_R" Type="float" />
+    <Property Name="CASS_R_R" Type="float" />
+    <Property Name="SUGB_R_R" Type="float" />
+    <Property Name="SUGB_I_R" Type="float" />
+    <Property Name="SOYB_R" Type="float" />
+    <Property Name="MAIZ_R" Type="float" />
+    <Property Name="COTT_R" Type="float" />
+    <Property Name="BANP_I_R" Type="float" />
+    <Property Name="COFF_R" Type="float" />
+    <Property Name="SWPY_R_R" Type="float" />
+    <Property Name="OTHE_R" Type="float" />
+    <Property Name="POTA_R_R" Type="float" />
+    <Property Name="SUGC_I_R" Type="float" />
+    <Property Name="BARL_I_R" Type="float" />
+    <Property Name="WHEA_R_R" Type="float" />
+    <Property Name="OPUL_R" Type="float" />
+    <Property Name="BARL_R" Type="float" />
+    <Property Name="MILL_R_R" Type="float" />
+    <Property Name="SUGC_R" Type="float" />
+    <Property Name="SUGB_R" Type="float" />
+    <Property Name="BEAN_R" Type="float" />
+    <Property Name="GROU_I_R" Type="float" />
+    <Property Name="OPUL_R_R" Type="float" />
+    <Property Name="MILL_R" Type="float" />
+    <Property Name="MILL_I_R" Type="float" />
+    <Property Name="COFF_I_R" Type="float" />
+    <Property Name="GROU_R" Type="float" />
+    <Property Name="SORG_R" Type="float" />
+    <Property Name="POTA_R" Type="float" />
+    <Property Name="OOIL_R" Type="float" />
+    <Property Name="CASS_I_R" Type="float" />
+    <Property Name="OFIB_R" Type="float" />
+    <Property Name="R_UNIT" Type="varchar" MaxLength="6" />
+    <Property Name="OOIL_I_H" Type="float" />
+    <Property Name="COFF_H" Type="float" />
+    <Property Name="BEAN_I_H" Type="float" />
+    <Property Name="SWPY_H" Type="float" />
+    <Property Name="GROU_H" Type="float" />
+    <Property Name="OTHE_I_H" Type="float" />
+    <Property Name="SOYB_I_H" Type="float" />
+    <Property Name="BANP_I_H" Type="float" />
+    <Property Name="CASS_H" Type="float" />
+    <Property Name="SORG_I_H" Type="float" />
+    <Property Name="COTT_I_H" Type="float" />
+    <Property Name="OFIB_I_H" Type="float" />
+    <Property Name="SUGB_R_H" Type="float" />
+    <Property Name="COFF_R_H" Type="float" />
+    <Property Name="MAIZ_R_H" Type="float" />
+    <Property Name="WHEA_R_H" Type="float" />
+    <Property Name="WHEA_I_H" Type="float" />
+    <Property Name="SORG_H" Type="float" />
+    <Property Name="MAIZ_I_H" Type="float" />
+    <Property Name="COTT_R_H" Type="float" />
+    <Property Name="SWPY_R_H" Type="float" />
+    <Property Name="BANP_H" Type="float" />
+    <Property Name="BANP_R_H" Type="float" />
+    <Property Name="BEAN_H" Type="float" />
+    <Property Name="MILL_R_H" Type="float" />
+    <Property Name="SUGC_R_H" Type="float" />
+    <Property Name="WHEA_H" Type="float" />
+    <Property Name="SOYB_R_H" Type="float" />
+    <Property Name="OTHE_R_H" Type="float" />
+    <Property Name="BEAN_R_H" Type="float" />
+    <Property Name="OFIB_H" Type="float" />
+    <Property Name="OOIL_R_H" Type="float" />
+    <Property Name="POTA_I_H" Type="float" />
+    <Property Name="CASS_I_H" Type="float" />
+    <Property Name="POTA_H" Type="float" />
+    <Property Name="BARL_R_H" Type="float" />
+    <Property Name="CASS_R_H" Type="float" />
+    <Property Name="OPUL_I_H" Type="float" />
+    <Property Name="OPUL_H" Type="float" />
+    <Property Name="RICE_I_H" Type="float" />
+    <Property Name="MILL_I_H" Type="float" />
+    <Property Name="GROU_R_H" Type="float" />
+    <Property Name="SWPY_I_H" Type="float" />
+    <Property Name="MILL_H" Type="float" />
+    <Property Name="SUGB_I_H" Type="float" />
+    <Property Name="OTHE_H" Type="float" />
+    <Property Name="SOYB_H" Type="float" />
+    <Property Name="COTT_H" Type="float" />
+    <Property Name="SUGB_H" Type="float" />
+    <Property Name="SUGC_I_H" Type="float" />
+    <Property Name="SORG_R_H" Type="float" />
+    <Property Name="MAIZ_H" Type="float" />
+    <Property Name="OFIB_R_H" Type="float" />
+    <Property Name="RICE_R_H" Type="float" />
+    <Property Name="BARL_H" Type="float" />
+    <Property Name="POTA_R_H" Type="float" />
+    <Property Name="RICE_H" Type="float" />
+    <Property Name="COFF_I_H" Type="float" />
+    <Property Name="GROU_I_H" Type="float" />
+    <Property Name="BARL_I_H" Type="float" />
+    <Property Name="OOIL_H" Type="float" />
+    <Property Name="OPUL_R_H" Type="float" />
+    <Property Name="SUGC_H" Type="float" />
+    <Property Name="SOYB_Y" Type="float" />
+    <Property Name="OOIL_R_Y" Type="float" />
+    <Property Name="SOYB_R_Y" Type="float" />
+    <Property Name="BANP_R_Y" Type="float" />
+    <Property Name="OTHE_R_Y" Type="float" />
+    <Property Name="CASS_Y" Type="float" />
+    <Property Name="OFIB_Y" Type="float" />
+    <Property Name="WHEA_Y" Type="float" />
+    <Property Name="SORG_R_Y" Type="float" />
+    <Property Name="RICE_R_Y" Type="float" />
+    <Property Name="POTA_I_Y" Type="float" />
+    <Property Name="SUGB_Y" Type="float" />
+    <Property Name="SWPY_R_Y" Type="float" />
+    <Property Name="SOYB_I_Y" Type="float" />
+    <Property Name="POTA_R_Y" Type="float" />
+    <Property Name="SUGB_R_Y" Type="float" />
+    <Property Name="SUGB_I_Y" Type="float" />
+    <Property Name="BARL_R_Y" Type="float" />
+    <Property Name="BANP_Y" Type="float" />
+    <Property Name="UNIT" Type="varchar" MaxLength="6" />
+    <Property Name="MILL_R_Y" Type="float" />
+    <Property Name="COTT_Y" Type="float" />
+    <Property Name="GROU_I_Y" Type="float" />
+    <Property Name="RICE_Y" Type="float" />
+    <Property Name="OTHE_I_Y" Type="float" />
+    <Property Name="OPUL_R_Y" Type="float" />
+    <Property Name="BEAN_R_Y" Type="float" />
+    <Property Name="MAIZ_I_Y" Type="float" />
+    <Property Name="SUGC_R_Y" Type="float" />
+    <Property Name="WHEA_R_Y" Type="float" />
+    <Property Name="COTT_I_Y" Type="float" />
+    <Property Name="COFF_Y" Type="float" />
+    <Property Name="BARL_I_Y" Type="float" />
+    <Property Name="MAIZ_Y" Type="float" />
+    <Property Name="MILL_Y" Type="float" />
+    <Property Name="SORG_I_Y" Type="float" />
+    <Property Name="OOIL_Y" Type="float" />
+    <Property Name="OTHE_Y" Type="float" />
+    <Property Name="OFIB_R_Y" Type="float" />
+    <Property Name="POTA_Y" Type="float" />
+    <Property Name="OPUL_Y" Type="float" />
+    <Property Name="COFF_R_Y" Type="float" />
+    <Property Name="OFIB_I_Y" Type="float" />
+    <Property Name="WHEA_I_Y" Type="float" />
+    <Property Name="MAIZ_R_Y" Type="float" />
+    <Property Name="CASS_I_Y" Type="float" />
+    <Property Name="BARL_Y" Type="float" />
+    <Property Name="CASS_R_Y" Type="float" />
+    <Property Name="RICE_I_Y" Type="float" />
+    <Property Name="COTT_R_Y" Type="float" />
+    <Property Name="SUGC_Y" Type="float" />
+    <Property Name="SWPY_I_Y" Type="float" />
+    <Property Name="SORG_Y" Type="float" />
+    <Property Name="BEAN_I_Y" Type="float" />
+    <Property Name="GROU_R_Y" Type="float" />
+    <Property Name="SWPY_Y" Type="float" />
+    <Property Name="SUGC_I_Y" Type="float" />
+    <Property Name="GROU_Y" Type="float" />
+    <Property Name="OPUL_I_Y" Type="float" />
+    <Property Name="COFF_I_Y" Type="float" />
+    <Property Name="OOIL_I_Y" Type="float" />
+    <Property Name="BEAN_Y" Type="float" />
+    <Property Name="BANP_I_Y" Type="float" />
+    <Property Name="MILL_I_Y" Type="float" />
+    <Property Name="X" Type="float" />
+    <Property Name="SAND" Type="float" />
+    <Property Name="V" Type="float" />
+    <Property Name="S" Type="float" />
+    <Property Name="CLAY" Type="float" />
+    <Property Name="N" Type="float" />
+    <Property Name="K" Type="float" />
+    <Property Name="I" Type="float" />
+    <Property Name="LOAM" Type="float" />
+    <Property Name="G" Type="float" />
+    <Property Name="E" Type="float" />
+    <Property Name="B" Type="float" />
+    <Property Name="A" Type="float" />
+    <Property Name="WheatRH" Type="float" />
+    <Property Name="WheatRL" Type="float" />
+    <Property Name="CowpeaRH" Type="float" />
+    <Property Name="ChickpeaRL" Type="float" />
+    <Property Name="GroundnutRH" Type="float" />
+    <Property Name="CowpeaRL" Type="float" />
+    <Property Name="ChickpeaRH" Type="float" />
+    <Property Name="GroundnutRL" Type="float" />
+    <Property Name="WetlandRiceRH" Type="float" />
+    <Property Name="SoybeanRH" Type="float" />
+    <Property Name="BananaRL" Type="float" />
+    <Property Name="BananaRH" Type="float" />
+    <Property Name="SoybeanRL" Type="float" />
+    <Property Name="FoxtailMilletRL" Type="float" />
+    <Property Name="DrylandRiceRL" Type="float" />
+    <Property Name="FoxtailMilletRH" Type="float" />
+    <Property Name="DrylandRiceRH" Type="float" />
+    <Property Name="PigeonpeaRH" Type="float" />
+    <Property Name="PigeonpeaRL" Type="float" />
+    <Property Name="PhaseolusBeanRH" Type="float" />
+    <Property Name="CabbageRL" Type="float" />
+    <Property Name="WetlandRiceRL" Type="float" />
+    <Property Name="PhaseolusBeanRL" Type="float" />
+    <Property Name="CabbageRH" Type="float" />
+    <Property Name="CarrotRH" Type="float" />
+    <Property Name="CocoaRH" Type="float" />
+    <Property Name="CarrotRL" Type="float" />
+    <Property Name="CocoaRL" Type="float" />
+    <Property Name="SorghumRL" Type="float" />
+    <Property Name="YamCocoyamRH" Type="float" />
+    <Property Name="SorghumRH" Type="float" />
+    <Property Name="YamCocoyamRL" Type="float" />
+    <Property Name="OnionRH" Type="float" />
+    <Property Name="OnionRL" Type="float" />
+    <Property Name="SweetpotatoRL" Type="float" />
+    <Property Name="CoffeeRL" Type="float" />
+    <Property Name="SweetpotatoRH" Type="float" />
+    <Property Name="CoffeeRH" Type="float" />
+    <Property Name="CottonRH" Type="float" />
+    <Property Name="SugarcaneRL" Type="float" />
+    <Property Name="TomatoRH" Type="float" />
+    <Property Name="CottonRL" Type="float" />
+    <Property Name="SugarcaneRH" Type="float" />
+    <Property Name="TomatoRL" Type="float" />
+    <Property Name="MaizeRL" Type="float" />
+    <Property Name="CassavaRL" Type="float" />
+    <Property Name="MaizeRH" Type="float" />
+    <Property Name="CassavaRH" Type="float" />
+    <Property Name="PearlMilletRH" Type="float" />
+    <Property Name="PearlMilletRL" Type="float" />
+    <Property Name="ADM1_CODE" Type="int" />
+    <Property Name="ADM0_CODE" Type="int" />
+    <Property Name="subNatUnit" Type="nvarchar" MaxLength="255" />
+    <Property Name="LAT" Type="float" />
+    <Property Name="ADM0_NAME" Type="nvarchar" MaxLength="255" />
+    <Property Name="LNG" Type="float" />
+    <Property Name="TT_50K" Type="float" />
+    <Property Name="GAUL_2008_ADM0_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="GAUL_2008_ADM1_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="GAUL_2008_ADM2_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="GAUL_2008_0" Type="nvarchar" MaxLength="100" />
+    <Property Name="GAUL_2008_1" Type="nvarchar" MaxLength="100" />
+    <Property Name="GAUL_2008_2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="GAUL_2012_0" Type="nvarchar" MaxLength="100" />
+    <Property Name="GAUL_2012_1" Type="nvarchar" MaxLength="100" />
+    <Property Name="GAUL_2012_2" Type="nvarchar" MaxLength="100" />
+    <Property Name="bmi" Type="float" />
+    <Property Name="bmi_normal" Type="float" />
+    <Property Name="bmi_normal_adj" Type="float" />
+    <Property Name="bmi_normal_adj_rural" Type="float" />
+    <Property Name="bmi_normal_rural" Type="float" />
+    <Property Name="bmi_obese" Type="float" />
+    <Property Name="bmi_obese_adj" Type="float" />
+    <Property Name="bmi_obese_adj_rural" Type="float" />
+    <Property Name="bmi_obese_rural" Type="float" />
+    <Property Name="bmi_overweight" Type="float" />
+    <Property Name="bmi_overweight_adj" Type="float" />
+    <Property Name="bmi_overweight_adj_rural" Type="float" />
+    <Property Name="bmi_overweight_rural" Type="float" />
+    <Property Name="bmi_rural" Type="float" />
+    <Property Name="bmi_underweight" Type="float" />
+    <Property Name="bmi_underweight_adj" Type="float" />
+    <Property Name="bmi_underweight_adj_rural" Type="float" />
+    <Property Name="bmi_underweight_rural" Type="float" />
+    <Property Name="child_mortality" Type="float" />
+    <Property Name="child_mortality_rural" Type="float" />
+    <Property Name="diarrhea" Type="float" />
+    <Property Name="diarrhea_rural" Type="float" />
+    <Property Name="infant_mortality" Type="float" />
+    <Property Name="infant_mortality_rural" Type="float" />
+    <Property Name="iron" Type="float" />
+    <Property Name="iron_rural" Type="float" />
+    <Property Name="m4_duration" Type="float" />
+    <Property Name="m4_duration_rural" Type="float" />
+    <Property Name="m5_duration" Type="float" />
+    <Property Name="m5_duration_rural" Type="float" />
+    <Property Name="mother_age" Type="float" />
+    <Property Name="mother_age_rural" Type="float" />
+    <Property Name="mother_height_cms" Type="float" />
+    <Property Name="mother_height_cms_rural" Type="float" />
+    <Property Name="mother_weight_kgs" Type="float" />
+    <Property Name="mother_weight_kgs_rural" Type="float" />
+    <Property Name="stunted_low" Type="float" />
+    <Property Name="stunted_low_rural" Type="float" />
+    <Property Name="stunted_moderate" Type="float" />
+    <Property Name="stunted_moderate_rural" Type="float" />
+    <Property Name="stunted_severe" Type="float" />
+    <Property Name="stunted_severe_rural" Type="float" />
+    <Property Name="underweight_low" Type="float" />
+    <Property Name="underweight_low_rural" Type="float" />
+    <Property Name="underweight_moderate" Type="float" />
+    <Property Name="underweight_moderate_rural" Type="float" />
+    <Property Name="underweight_severe" Type="float" />
+    <Property Name="underweight_severe_rural" Type="float" />
+    <Property Name="vitamin_a" Type="float" />
+    <Property Name="vitamin_a_rural" Type="float" />
+    <Property Name="wasted_low" Type="float" />
+    <Property Name="wasted_low_rural" Type="float" />
+    <Property Name="wasted_moderate" Type="float" />
+    <Property Name="wasted_moderate_rural" Type="float" />
+    <Property Name="wasted_severe" Type="float" />
+    <Property Name="wasted_severe_rural" Type="float" />
+    <Property Name="wealth" Type="float" />
+    <Property Name="wealth_rural" Type="float" />
+    <Property Name="weight" Type="float" />
+    <Property Name="weight_rural" Type="float" />
+    <Property Name="ADM1_CODE_ALT" Type="float" />
+    <Property Name="ADM2_CODE_ALT" Type="float" />
+    <Property Name="Y" Type="float" />
+    <Property Name="WDPA_PCT" Type="float" />
+    <Property Name="IR_EI" Type="float" />
+    <Property Name="IR_GI" Type="float" />
+    <Property Name="RF_EI" Type="float" />
+    <Property Name="RF_GI" Type="float" />
+    <Property Name="SALUM" Type="float" />
+    <Property Name="SCALC" Type="float" />
+    <Property Name="SCLAY" Type="float" />
+    <Property Name="SCRAC" Type="float" />
+    <Property Name="SLEACH" Type="float" />
+    <Property Name="SLNC" Type="float" />
+    <Property Name="SLOAM" Type="float" />
+    <Property Name="SPFH" Type="float" />
+    <Property Name="SSAL" Type="float" />
+    <Property Name="SSAND" Type="float" />
+    <Property Name="SSOD" Type="float" />
+    <Property Name="bapl_h" Type="float" />
+    <Property Name="bapl_i_h" Type="float" />
+    <Property Name="bapl_r_h" Type="float" />
+    <Property Name="cere_h" Type="float" />
+    <Property Name="cere_i_h" Type="float" />
+    <Property Name="cere_r_h" Type="float" />
+    <Property Name="frui_h" Type="float" />
+    <Property Name="frui_i_h" Type="float" />
+    <Property Name="frui_r_h" Type="float" />
+    <Property Name="puls_h" Type="float" />
+    <Property Name="puls_i_h" Type="float" />
+    <Property Name="puls_r_h" Type="float" />
+    <Property Name="bapl_i_p" Type="float" />
+    <Property Name="bapl_p" Type="float" />
+    <Property Name="bapl_r_p" Type="float" />
+    <Property Name="cere_i_p" Type="float" />
+    <Property Name="cere_p" Type="float" />
+    <Property Name="cere_r_p" Type="float" />
+    <Property Name="coff_i_p" Type="float" />
+    <Property Name="coff_p" Type="float" />
+    <Property Name="coff_r_p" Type="float" />
+    <Property Name="frui_i_p" Type="float" />
+    <Property Name="frui_p" Type="float" />
+    <Property Name="frui_r_p" Type="float" />
+    <Property Name="mill_i_p" Type="float" />
+    <Property Name="mill_p" Type="float" />
+    <Property Name="mill_r_p" Type="float" />
+    <Property Name="puls_i_p" Type="float" />
+    <Property Name="puls_p" Type="float" />
+    <Property Name="puls_r_p" Type="float" />
+    <Property Name="bapl_i_y" Type="float" />
+    <Property Name="bapl_r_y" Type="float" />
+    <Property Name="bapl_y" Type="float" />
+    <Property Name="cere_i_y" Type="float" />
+    <Property Name="cere_r_y" Type="float" />
+    <Property Name="cere_y" Type="float" />
+    <Property Name="frui_i_y" Type="float" />
+    <Property Name="frui_r_y" Type="float" />
+    <Property Name="frui_y" Type="float" />
+    <Property Name="puls_i_y" Type="float" />
+    <Property Name="puls_r_y" Type="float" />
+    <Property Name="puls_y" Type="float" />
+    <Property Name="acof_h" Type="float" />
+    <Property Name="acof_i_h" Type="float" />
+    <Property Name="acof_r_h" Type="float" />
+    <Property Name="bana_h" Type="float" />
+    <Property Name="bana_i_h" Type="float" />
+    <Property Name="bana_r_h" Type="float" />
+    <Property Name="chic_h" Type="float" />
+    <Property Name="chic_i_h" Type="float" />
+    <Property Name="chic_r_h" Type="float" />
+    <Property Name="cnut_h" Type="float" />
+    <Property Name="cnut_i_h" Type="float" />
+    <Property Name="cnut_r_h" Type="float" />
+    <Property Name="coco_h" Type="float" />
+    <Property Name="coco_r_h" Type="float" />
+    <Property Name="cowp_h" Type="float" />
+    <Property Name="cowp_i_h" Type="float" />
+    <Property Name="cowp_r_h" Type="float" />
+    <Property Name="lent_h" Type="float" />
+    <Property Name="lent_i_h" Type="float" />
+    <Property Name="lent_r_h" Type="float" />
+    <Property Name="ocer_h" Type="float" />
+    <Property Name="ocer_i_h" Type="float" />
+    <Property Name="ocer_r_h" Type="float" />
+    <Property Name="oilp_h" Type="float" />
+    <Property Name="oilp_i_h" Type="float" />
+    <Property Name="oilp_r_h" Type="float" />
+    <Property Name="orts_h" Type="float" />
+    <Property Name="orts_r_h" Type="float" />
+    <Property Name="pige_h" Type="float" />
+    <Property Name="pige_r_h" Type="float" />
+    <Property Name="plnt_h" Type="float" />
+    <Property Name="plnt_r_h" Type="float" />
+    <Property Name="pmil_h" Type="float" />
+    <Property Name="pmil_i_h" Type="float" />
+    <Property Name="pmil_r_h" Type="float" />
+    <Property Name="rape_h" Type="float" />
+    <Property Name="rape_r_h" Type="float" />
+    <Property Name="rcof_h" Type="float" />
+    <Property Name="rcof_i_h" Type="float" />
+    <Property Name="rcof_r_h" Type="float" />
+    <Property Name="rest_h" Type="float" />
+    <Property Name="rest_i_h" Type="float" />
+    <Property Name="rest_r_h" Type="float" />
+    <Property Name="sesa_h" Type="float" />
+    <Property Name="sesa_i_h" Type="float" />
+    <Property Name="sesa_r_h" Type="float" />
+    <Property Name="smil_h" Type="float" />
+    <Property Name="smil_r_h" Type="float" />
+    <Property Name="sunf_h" Type="float" />
+    <Property Name="sunf_r_h" Type="float" />
+    <Property Name="swpo_h" Type="float" />
+    <Property Name="swpo_i_h" Type="float" />
+    <Property Name="swpo_r_h" Type="float" />
+    <Property Name="teas_h" Type="float" />
+    <Property Name="teas_i_h" Type="float" />
+    <Property Name="teas_r_h" Type="float" />
+    <Property Name="temf_h" Type="float" />
+    <Property Name="temf_r_h" Type="float" />
+    <Property Name="toba_h" Type="float" />
+    <Property Name="toba_i_h" Type="float" />
+    <Property Name="toba_r_h" Type="float" />
+    <Property Name="trof_h" Type="float" />
+    <Property Name="trof_i_h" Type="float" />
+    <Property Name="trof_r_h" Type="float" />
+    <Property Name="vege_h" Type="float" />
+    <Property Name="vege_i_h" Type="float" />
+    <Property Name="vege_r_h" Type="float" />
+    <Property Name="yams_h" Type="float" />
+    <Property Name="yams_r_h" Type="float" />
+    <Property Name="acof_i_p" Type="float" />
+    <Property Name="acof_p" Type="float" />
+    <Property Name="acof_r_p" Type="float" />
+    <Property Name="bana_i_p" Type="float" />
+    <Property Name="bana_p" Type="float" />
+    <Property Name="bana_r_p" Type="float" />
+    <Property Name="barl_i_p" Type="float" />
+    <Property Name="barl_p" Type="float" />
+    <Property Name="barl_r_p" Type="float" />
+    <Property Name="bean_i_p" Type="float" />
+    <Property Name="bean_p" Type="float" />
+    <Property Name="bean_r_p" Type="float" />
+    <Property Name="cass_p" Type="float" />
+    <Property Name="cass_r_p" Type="float" />
+    <Property Name="chic_i_p" Type="float" />
+    <Property Name="chic_p" Type="float" />
+    <Property Name="chic_r_p" Type="float" />
+    <Property Name="cnut_i_p" Type="float" />
+    <Property Name="cnut_p" Type="float" />
+    <Property Name="cnut_r_p" Type="float" />
+    <Property Name="coco_p" Type="float" />
+    <Property Name="coco_r_p" Type="float" />
+    <Property Name="cott_i_p" Type="float" />
+    <Property Name="cott_p" Type="float" />
+    <Property Name="cott_r_p" Type="float" />
+    <Property Name="cowp_i_p" Type="float" />
+    <Property Name="cowp_p" Type="float" />
+    <Property Name="cowp_r_p" Type="float" />
+    <Property Name="grou_i_p" Type="float" />
+    <Property Name="grou_p" Type="float" />
+    <Property Name="grou_r_p" Type="float" />
+    <Property Name="lent_i_p" Type="float" />
+    <Property Name="lent_p" Type="float" />
+    <Property Name="lent_r_p" Type="float" />
+    <Property Name="maiz_i_p" Type="float" />
+    <Property Name="maiz_p" Type="float" />
+    <Property Name="maiz_r_p" Type="float" />
+    <Property Name="ocer_i_p" Type="float" />
+    <Property Name="ocer_p" Type="float" />
+    <Property Name="ocer_r_p" Type="float" />
+    <Property Name="ofib_p" Type="float" />
+    <Property Name="ofib_r_p" Type="float" />
+    <Property Name="oilp_i_p" Type="float" />
+    <Property Name="oilp_p" Type="float" />
+    <Property Name="oilp_r_p" Type="float" />
+    <Property Name="ooil_p" Type="float" />
+    <Property Name="ooil_r_p" Type="float" />
+    <Property Name="opul_i_p" Type="float" />
+    <Property Name="opul_p" Type="float" />
+    <Property Name="opul_r_p" Type="float" />
+    <Property Name="orts_p" Type="float" />
+    <Property Name="orts_r_p" Type="float" />
+    <Property Name="pige_p" Type="float" />
+    <Property Name="pige_r_p" Type="float" />
+    <Property Name="plnt_p" Type="float" />
+    <Property Name="plnt_r_p" Type="float" />
+    <Property Name="pmil_i_p" Type="float" />
+    <Property Name="pmil_p" Type="float" />
+    <Property Name="pmil_r_p" Type="float" />
+    <Property Name="pota_i_p" Type="float" />
+    <Property Name="pota_p" Type="float" />
+    <Property Name="pota_r_p" Type="float" />
+    <Property Name="rape_p" Type="float" />
+    <Property Name="rape_r_p" Type="float" />
+    <Property Name="rcof_i_p" Type="float" />
+    <Property Name="rcof_p" Type="float" />
+    <Property Name="rcof_r_p" Type="float" />
+    <Property Name="rest_i_p" Type="float" />
+    <Property Name="rest_p" Type="float" />
+    <Property Name="rest_r_p" Type="float" />
+    <Property Name="rice_i_p" Type="float" />
+    <Property Name="rice_p" Type="float" />
+    <Property Name="rice_r_p" Type="float" />
+    <Property Name="sesa_i_p" Type="float" />
+    <Property Name="sesa_p" Type="float" />
+    <Property Name="sesa_r_p" Type="float" />
+    <Property Name="smil_p" Type="float" />
+    <Property Name="smil_r_p" Type="float" />
+    <Property Name="sorg_i_p" Type="float" />
+    <Property Name="sorg_p" Type="float" />
+    <Property Name="sorg_r_p" Type="float" />
+    <Property Name="soyb_i_p" Type="float" />
+    <Property Name="soyb_p" Type="float" />
+    <Property Name="soyb_r_p" Type="float" />
+    <Property Name="sugc_i_p" Type="float" />
+    <Property Name="sugc_p" Type="float" />
+    <Property Name="sugc_r_p" Type="float" />
+    <Property Name="sunf_p" Type="float" />
+    <Property Name="sunf_r_p" Type="float" />
+    <Property Name="swpo_i_p" Type="float" />
+    <Property Name="swpo_p" Type="float" />
+    <Property Name="swpo_r_p" Type="float" />
+    <Property Name="teas_i_p" Type="float" />
+    <Property Name="teas_p" Type="float" />
+    <Property Name="teas_r_p" Type="float" />
+    <Property Name="temf_p" Type="float" />
+    <Property Name="temf_r_p" Type="float" />
+    <Property Name="toba_i_p" Type="float" />
+    <Property Name="toba_p" Type="float" />
+    <Property Name="toba_r_p" Type="float" />
+    <Property Name="trof_i_p" Type="float" />
+    <Property Name="trof_p" Type="float" />
+    <Property Name="trof_r_p" Type="float" />
+    <Property Name="vege_i_p" Type="float" />
+    <Property Name="vege_p" Type="float" />
+    <Property Name="vege_r_p" Type="float" />
+    <Property Name="whea_i_p" Type="float" />
+    <Property Name="whea_p" Type="float" />
+    <Property Name="whea_r_p" Type="float" />
+    <Property Name="yams_p" Type="float" />
+    <Property Name="yams_r_p" Type="float" />
+    <Property Name="acof_v" Type="float" />
+    <Property Name="bana_v" Type="float" />
+    <Property Name="barl_v" Type="float" />
+    <Property Name="bean_v" Type="float" />
+    <Property Name="cass_v" Type="float" />
+    <Property Name="chic_v" Type="float" />
+    <Property Name="cnut_v" Type="float" />
+    <Property Name="coco_v" Type="float" />
+    <Property Name="cott_v" Type="float" />
+    <Property Name="cowp_v" Type="float" />
+    <Property Name="grou_v" Type="float" />
+    <Property Name="lent_v" Type="float" />
+    <Property Name="maiz_v" Type="float" />
+    <Property Name="ocer_v" Type="float" />
+    <Property Name="ofib_v" Type="float" />
+    <Property Name="oilp_v" Type="float" />
+    <Property Name="ooil_v" Type="float" />
+    <Property Name="opul_v" Type="float" />
+    <Property Name="orts_v" Type="float" />
+    <Property Name="pige_v" Type="float" />
+    <Property Name="plnt_v" Type="float" />
+    <Property Name="pmil_v" Type="float" />
+    <Property Name="pota_v" Type="float" />
+    <Property Name="rape_v" Type="float" />
+    <Property Name="rcof_v" Type="float" />
+    <Property Name="rest_v" Type="float" />
+    <Property Name="rice_v" Type="float" />
+    <Property Name="sesa_v" Type="float" />
+    <Property Name="smil_v" Type="float" />
+    <Property Name="sorg_v" Type="float" />
+    <Property Name="soyb_v" Type="float" />
+    <Property Name="sugc_v" Type="float" />
+    <Property Name="sunf_v" Type="float" />
+    <Property Name="swpo_v" Type="float" />
+    <Property Name="teas_v" Type="float" />
+    <Property Name="temf_v" Type="float" />
+    <Property Name="toba_v" Type="float" />
+    <Property Name="trof_v" Type="float" />
+    <Property Name="vege_v" Type="float" />
+    <Property Name="whea_v" Type="float" />
+    <Property Name="yams_v" Type="float" />
+    <Property Name="area_crop" Type="float" />
+    <Property Name="area_food" Type="float" />
+    <Property Name="area_nonf" Type="float" />
+    <Property Name="vp_crop" Type="float" />
+    <Property Name="vp_crop_ar" Type="float" />
+    <Property Name="vp_food" Type="float" />
+    <Property Name="vp_food_ar" Type="float" />
+    <Property Name="vp_nonf" Type="float" />
+    <Property Name="bana_r_y" Type="float" />
+    <Property Name="vp_nonf_ar" Type="float" />
+    <Property Name="acof_i_y" Type="float" />
+    <Property Name="acof_r_y" Type="float" />
+    <Property Name="acof_y" Type="float" />
+    <Property Name="bana_i_y" Type="float" />
+    <Property Name="bana_y" Type="float" />
+    <Property Name="chic_i_y" Type="float" />
+    <Property Name="chic_r_y" Type="float" />
+    <Property Name="chic_y" Type="float" />
+    <Property Name="cnut_i_y" Type="float" />
+    <Property Name="cnut_r_y" Type="float" />
+    <Property Name="cnut_y" Type="float" />
+    <Property Name="coco_r_y" Type="float" />
+    <Property Name="coco_y" Type="float" />
+    <Property Name="cowp_i_y" Type="float" />
+    <Property Name="cowp_r_y" Type="float" />
+    <Property Name="cowp_y" Type="float" />
+    <Property Name="lent_i_y" Type="float" />
+    <Property Name="lent_r_y" Type="float" />
+    <Property Name="lent_y" Type="float" />
+    <Property Name="ocer_i_y" Type="float" />
+    <Property Name="ocer_r_y" Type="float" />
+    <Property Name="ocer_y" Type="float" />
+    <Property Name="oilp_i_y" Type="float" />
+    <Property Name="oilp_r_y" Type="float" />
+    <Property Name="oilp_y" Type="float" />
+    <Property Name="orts_r_y" Type="float" />
+    <Property Name="orts_y" Type="float" />
+    <Property Name="pige_r_y" Type="float" />
+    <Property Name="pige_y" Type="float" />
+    <Property Name="plnt_r_y" Type="float" />
+    <Property Name="plnt_y" Type="float" />
+    <Property Name="pmil_i_y" Type="float" />
+    <Property Name="pmil_r_y" Type="float" />
+    <Property Name="pmil_y" Type="float" />
+    <Property Name="rape_r_y" Type="float" />
+    <Property Name="rape_y" Type="float" />
+    <Property Name="rcof_i_y" Type="float" />
+    <Property Name="rcof_r_y" Type="float" />
+    <Property Name="rcof_y" Type="float" />
+    <Property Name="rest_i_y" Type="float" />
+    <Property Name="rest_r_y" Type="float" />
+    <Property Name="rest_y" Type="float" />
+    <Property Name="sesa_i_y" Type="float" />
+    <Property Name="sesa_r_y" Type="float" />
+    <Property Name="sesa_y" Type="float" />
+    <Property Name="smil_r_y" Type="float" />
+    <Property Name="smil_y" Type="float" />
+    <Property Name="sunf_r_y" Type="float" />
+    <Property Name="sunf_y" Type="float" />
+    <Property Name="swpo_i_y" Type="float" />
+    <Property Name="swpo_r_y" Type="float" />
+    <Property Name="swpo_y" Type="float" />
+    <Property Name="teas_r_y" Type="float" />
+    <Property Name="teas_y" Type="float" />
+    <Property Name="temf_r_y" Type="float" />
+    <Property Name="temf_y" Type="float" />
+    <Property Name="toba_i_y" Type="float" />
+    <Property Name="toba_r_y" Type="float" />
+    <Property Name="toba_y" Type="float" />
+    <Property Name="trof_i_y" Type="float" />
+    <Property Name="trof_r_y" Type="float" />
+    <Property Name="trof_y" Type="float" />
+    <Property Name="vege_i_y" Type="float" />
+    <Property Name="vege_r_y" Type="float" />
+    <Property Name="vege_y" Type="float" />
+    <Property Name="yams_r_y" Type="float" />
+    <Property Name="yams_y" Type="float" />
+    <Property Name="SVOLC" Type="float" />
+    <Property Name="SWATER" Type="float" />
+  </EntityType>
+  <EntityType Name="CELL5M">
+    <Key>
+      <PropertyRef Name="CELL5M" />
+    </Key>
+    <Property Name="CELL5M" Type="int" Nullable="false" />
+    <Property Name="Shape" Type="geometry" />
+  </EntityType>
+  <EntityType Name="classification">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="createddate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="collection">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+    <Property Name="label" Type="nvarchar" MaxLength="255" />
+    <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="collection_group">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="group" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="collection_code" Type="nvarchar" Nullable="false" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="continuous_classification">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="domainid" Type="int" Nullable="false" />
+    <Property Name="min" Type="float" />
+    <Property Name="max" Type="float" />
+    <Property Name="classid" Type="int" Nullable="false" />
+    <Property Name="sortorder" Type="int" />
+  </EntityType>
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="10" />
+    <Property Name="label" Type="nvarchar" MaxLength="255" />
+    <Property Name="id" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="shape" Type="geometry" />
+  </EntityType>
+  <EntityType Name="country_collection">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="country_id" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="collection_code" Type="nvarchar" Nullable="false" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="discrete_classification">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="originalid" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="domainid" Type="int" Nullable="false" />
+    <Property Name="classid" Type="int" Nullable="false" />
+    <Property Name="sortorder" Type="int" />
+  </EntityType>
+  <EntityType Name="domain_country_results">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="iso3" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="schema_id" Type="int" Nullable="false" />
+    <Property Name="shape" Type="geometry" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="domain_variable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="column_name" Type="varchar" MaxLength="255" />
+    <Property Name="micro_label" Type="varchar" MaxLength="255" />
+    <Property Name="short_label" Type="varchar" MaxLength="255" />
+    <Property Name="full_label" Type="varchar" MaxLength="255" />
+    <Property Name="long_description" Type="varchar(max)" />
+    <Property Name="category_1" Type="varchar" MaxLength="255" />
+    <Property Name="category_2" Type="varchar" MaxLength="255" />
+    <Property Name="category_3" Type="varchar" MaxLength="255" />
+    <Property Name="item" Type="varchar" MaxLength="255" />
+    <Property Name="unit" Type="varchar" MaxLength="255" />
+    <Property Name="decimal_places" Type="int" />
+    <Property Name="year" Type="int" />
+    <Property Name="end_year" Type="int" />
+    <Property Name="extent" Type="varchar" MaxLength="255" />
+    <Property Name="classification_type" Type="varchar" MaxLength="255" />
+    <Property Name="agg_type" Type="varchar" MaxLength="255" />
+    <Property Name="agg_formula" Type="varchar" MaxLength="255" />
+    <Property Name="table_name" Type="varchar" MaxLength="255" />
+    <Property Name="column_label" Type="varchar" MaxLength="255" />
+    <Property Name="table_unique_id" Type="varchar" MaxLength="255" />
+    <Property Name="source" Type="varchar" MaxLength="255" />
+    <Property Name="micro_source" Type="varchar" MaxLength="50" />
+    <Property Name="data_worker" Type="varchar" MaxLength="255" />
+    <Property Name="createdby" Type="varchar" MaxLength="255" />
+    <Property Name="createddate" Type="varchar" MaxLength="255" />
+    <Property Name="published" Type="bit" />
+    <Property Name="validated" Type="bit" />
+    <Property Name="last_processed" Type="varchar" MaxLength="255" />
+    <Property Name="processing_comment" Type="varchar" MaxLength="255" />
+    <Property Name="version" Type="varchar" MaxLength="50" />
+    <Property Name="caveat" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'HC_DB_WEB_2.dbo.drupal_metadata' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="drupal_metadata">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="fk_indicator_id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fk_indicator_id" Type="int" Nullable="false" />
+    <Property Name="drupal_subtopic" Type="varchar" MaxLength="255" />
+    <Property Name="drupal_keywords" Type="varchar" MaxLength="255" />
+    <Property Name="drupal_commodity" Type="varchar" MaxLength="255" />
+    <Property Name="drupal_author" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="indicator_metadata">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="vi_id" Type="int" />
+    <Property Name="varCode" Type="nvarchar(max)" />
+    <Property Name="varLabel" Type="nvarchar(max)" />
+    <Property Name="published" Type="bit" />
+    <Property Name="tbName" Type="nvarchar(max)" />
+    <Property Name="version" Type="nvarchar(max)" />
+    <Property Name="tbKey" Type="nvarchar(max)" />
+    <Property Name="varTitle" Type="nvarchar(max)" />
+    <Property Name="varDesc" Type="nvarchar(max)" />
+    <Property Name="unit" Type="nvarchar(max)" />
+    <Property Name="dec" Type="int" />
+    <Property Name="year" Type="nvarchar(max)" />
+    <Property Name="yearEnd" Type="int" />
+    <Property Name="cat1" Type="nvarchar(max)" />
+    <Property Name="cat2" Type="nvarchar(max)" />
+    <Property Name="cat3" Type="nvarchar(max)" />
+    <Property Name="extent" Type="nvarchar(max)" />
+    <Property Name="type" Type="nvarchar(max)" />
+    <Property Name="aggType" Type="nvarchar(max)" />
+    <Property Name="aggFun" Type="nvarchar(max)" />
+    <Property Name="owner" Type="nvarchar(max)" />
+    <Property Name="caveat" Type="nvarchar(max)" />
+    <Property Name="sources" Type="nvarchar(max)" />
+    <Property Name="sourceMini" Type="nvarchar(max)" />
+    <Property Name="genRaster" Type="bit" />
+    <Property Name="isDomain" Type="bit" />
+    <Property Name="mxdName" Type="nvarchar(max)" />
+    <Property Name="classColors" Type="nvarchar(max)" />
+    <Property Name="classBreaks" Type="nvarchar(max)" />
+    <Property Name="classLabels" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="schema">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="preview_url" Type="varchar" MaxLength="50" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="createddate" Type="datetime" />
+    <Property Name="long_description" Type="varchar(max)" />
+    <Property Name="published" Type="bit" Nullable="false" />
+    <Property Name="for_mappr" Type="bit" />
+    <Property Name="restrictions" Type="varchar" MaxLength="50" />
+    <Property Name="json_geometry" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="schema_domain">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="schemaid" Type="int" Nullable="false" />
+    <Property Name="domainid" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'HC_DB_WEB_2.dbo.tmp_build_cell_values' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="tmp_build_cell_values">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="select_columns" Type="nvarchar(max)" />
+    <Property Name="unpivot_columns" Type="nvarchar(max)" />
+    <Property Name="num_inserted_rows" Type="int" />
+    <Property Name="_count" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'HC_DB_WEB_2.dbo.Variable_Inventory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Variable_Inventory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="column_name" Type="varchar" MaxLength="255" />
+    <Property Name="micro_label" Type="varchar" MaxLength="255" />
+    <Property Name="short_label" Type="varchar" MaxLength="255" />
+    <Property Name="full_label" Type="varchar" MaxLength="255" />
+    <Property Name="long_description" Type="varchar(max)" />
+    <Property Name="category_1" Type="varchar" MaxLength="255" />
+    <Property Name="category_2" Type="varchar" MaxLength="255" />
+    <Property Name="category_3" Type="varchar" MaxLength="255" />
+    <Property Name="item" Type="varchar" MaxLength="255" />
+    <Property Name="unit" Type="varchar" MaxLength="255" />
+    <Property Name="decimal_places" Type="int" />
+    <Property Name="year_1" Type="int" />
+    <Property Name="end_year_1" Type="int" />
+    <Property Name="extent" Type="varchar" MaxLength="255" />
+    <Property Name="classification_type" Type="varchar" MaxLength="255" />
+    <Property Name="agg_type" Type="varchar" MaxLength="255" />
+    <Property Name="agg_formula" Type="varchar" MaxLength="255" />
+    <Property Name="table_name" Type="varchar" MaxLength="255" />
+    <Property Name="column_label" Type="varchar" MaxLength="255" />
+    <Property Name="table_unique_id" Type="varchar" MaxLength="255" />
+    <Property Name="tafkas_domain" Type="int" />
+    <Property Name="tafkas_summary" Type="int" />
+    <Property Name="forweb" Type="int" />
+    <Property Name="agmarketfinder" Type="int" />
+    <Property Name="droppr" Type="int" />
+    <Property Name="map_gallery" Type="int" />
+    <Property Name="source" Type="varchar" MaxLength="255" />
+    <Property Name="micro_source" Type="varchar" MaxLength="50" />
+    <Property Name="data_worker" Type="varchar" MaxLength="255" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="createdby" Type="varchar" MaxLength="255" />
+    <Property Name="createddate" Type="varchar" MaxLength="255" />
+    <Property Name="published" Type="float" />
+    <Property Name="drupal_subtopic" Type="varchar" MaxLength="255" />
+    <Property Name="drupal_keywords" Type="varchar" MaxLength="255" />
+    <Property Name="drupal_commodity" Type="varchar" MaxLength="255" />
+    <Property Name="last_processed" Type="varchar" MaxLength="255" />
+    <Property Name="processing_comment" Type="varchar" MaxLength="255" />
+    <Property Name="version" Type="varchar" MaxLength="50" />
+    <Property Name="caveat" Type="varchar(max)" />
+    <Property Name="drupal_author" Type="varchar" MaxLength="255" />
+    <Property Name="for_drupal" Type="bit" />
+    <Property Name="end_year" Type="nchar" MaxLength="10" />
+    <Property Name="year" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'HC_DB_WEB_2.dbo.vCountryList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vCountryList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="10" />
+    <Property Name="label" Type="nvarchar" MaxLength="255" />
+    <Property Name="id" Type="nvarchar" Nullable="false" MaxLength="3" />
+  </EntityType>
+  <Association Name="FK_collection_group_collection">
+    <End Role="collection" Type="HC_WEB_DB.Store.collection" Multiplicity="1" />
+    <End Role="collection_group" Type="HC_WEB_DB.Store.collection_group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="collection">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="collection_group">
+        <PropertyRef Name="collection_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_continuous_classification_classification">
+    <End Role="classification" Type="HC_WEB_DB.Store.classification" Multiplicity="1" />
+    <End Role="continuous_classification" Type="HC_WEB_DB.Store.continuous_classification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="classification">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="continuous_classification">
+        <PropertyRef Name="classid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_continuous_classification_domain_variable">
+    <End Role="domain_variable" Type="HC_WEB_DB.Store.domain_variable" Multiplicity="1" />
+    <End Role="continuous_classification" Type="HC_WEB_DB.Store.continuous_classification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="domain_variable">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="continuous_classification">
+        <PropertyRef Name="domainid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_country_collection_collection">
+    <End Role="collection" Type="HC_WEB_DB.Store.collection" Multiplicity="1" />
+    <End Role="country_collection" Type="HC_WEB_DB.Store.country_collection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="collection">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="country_collection">
+        <PropertyRef Name="collection_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_country_collection_country">
+    <End Role="country" Type="HC_WEB_DB.Store.country" Multiplicity="1" />
+    <End Role="country_collection" Type="HC_WEB_DB.Store.country_collection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="country_collection">
+        <PropertyRef Name="country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_discrete_classification_classification">
+    <End Role="classification" Type="HC_WEB_DB.Store.classification" Multiplicity="1" />
+    <End Role="discrete_classification" Type="HC_WEB_DB.Store.discrete_classification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="classification">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="discrete_classification">
+        <PropertyRef Name="classid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_discrete_classification_domain_variable">
+    <End Role="domain_variable" Type="HC_WEB_DB.Store.domain_variable" Multiplicity="1" />
+    <End Role="discrete_classification" Type="HC_WEB_DB.Store.discrete_classification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="domain_variable">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="discrete_classification">
+        <PropertyRef Name="domainid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_domain_country_results_country">
+    <End Role="country" Type="HC_WEB_DB.Store.country" Multiplicity="1" />
+    <End Role="domain_country_results" Type="HC_WEB_DB.Store.domain_country_results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="domain_country_results">
+        <PropertyRef Name="iso3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_domain_country_results_schema">
+    <End Role="schema" Type="HC_WEB_DB.Store.schema" Multiplicity="1" />
+    <End Role="domain_country_results" Type="HC_WEB_DB.Store.domain_country_results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="schema">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="domain_country_results">
+        <PropertyRef Name="schema_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_schema_domain_domain_variable">
+    <End Role="domain_variable" Type="HC_WEB_DB.Store.domain_variable" Multiplicity="1" />
+    <End Role="schema_domain" Type="HC_WEB_DB.Store.schema_domain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="domain_variable">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="schema_domain">
+        <PropertyRef Name="domainid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_schema_domain_schema">
+    <End Role="schema" Type="HC_WEB_DB.Store.schema" Multiplicity="1" />
+    <End Role="schema_domain" Type="HC_WEB_DB.Store.schema_domain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="schema">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="schema_domain">
+        <PropertyRef Name="schemaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'HC_DB_WEB_2.dbo.indicator_metadata_old' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="indicator_metadata_old">
+        <Property Name="id" Type="int" />
+        <Property Name="column_name" Type="nvarchar(max)" />
+        <Property Name="micro_label" Type="nvarchar(max)" />
+        <Property Name="short_label" Type="nvarchar(max)" />
+        <Property Name="full_label" Type="nvarchar(max)" />
+        <Property Name="long_description" Type="nvarchar(max)" />
+        <Property Name="category_1" Type="nvarchar(max)" />
+        <Property Name="category_2" Type="nvarchar(max)" />
+        <Property Name="category_3" Type="nvarchar(max)" />
+        <Property Name="item" Type="nvarchar(max)" />
+        <Property Name="unit" Type="nvarchar(max)" />
+        <Property Name="decimal_places" Type="int" />
+        <Property Name="year" Type="int" />
+        <Property Name="end_year" Type="int" />
+        <Property Name="extent" Type="nvarchar(max)" />
+        <Property Name="classification_type" Type="nvarchar(max)" />
+        <Property Name="agg_type" Type="nvarchar(max)" />
+        <Property Name="agg_formula" Type="nvarchar(max)" />
+        <Property Name="table_name" Type="nvarchar(max)" />
+        <Property Name="column_label" Type="nvarchar(max)" />
+        <Property Name="table_unique_id" Type="nvarchar(max)" />
+        <Property Name="source" Type="nvarchar(max)" />
+        <Property Name="micro_source" Type="nvarchar(max)" />
+        <Property Name="data_worker" Type="nvarchar(max)" />
+        <Property Name="createdby" Type="nvarchar(max)" />
+        <Property Name="createddate" Type="nvarchar(max)" />
+        <Property Name="published" Type="bit" />
+        <Property Name="validated" Type="nvarchar(max)" />
+        <Property Name="last_processed" Type="nvarchar(max)" />
+        <Property Name="processing_comment" Type="nvarchar(max)" />
+        <Property Name="version" Type="nvarchar(max)" />
+        <Property Name="caveat" Type="nvarchar(max)" />
+        <Property Name="genRaster" Type="bit" />
+        <Property Name="isDomain" Type="bit" />
+        <Property Name="mxdName" Type="nvarchar(max)" />
+        <Property Name="classColors" Type="nvarchar(max)" />
+        <Property Name="classBreaks" Type="nvarchar(max)" />
+        <Property Name="classLabels" Type="nvarchar(max)" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'HC_DB_WEB_2.dbo.indicator_metadata_r2' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="indicator_metadata_r2">
+        <Property Name="id" Type="int" />
+        <Property Name="column_name" Type="nvarchar(max)" />
+        <Property Name="micro_label" Type="nvarchar(max)" />
+        <Property Name="short_label" Type="nvarchar(max)" />
+        <Property Name="full_label" Type="nvarchar(max)" />
+        <Property Name="long_description" Type="nvarchar(max)" />
+        <Property Name="category_1" Type="nvarchar(max)" />
+        <Property Name="category_2" Type="nvarchar(max)" />
+        <Property Name="category_3" Type="nvarchar(max)" />
+        <Property Name="item" Type="nvarchar(max)" />
+        <Property Name="unit" Type="nvarchar(max)" />
+        <Property Name="decimal_places" Type="int" />
+        <Property Name="year" Type="nvarchar(max)" />
+        <Property Name="end_year" Type="int" />
+        <Property Name="extent" Type="nvarchar(max)" />
+        <Property Name="classification_type" Type="nvarchar(max)" />
+        <Property Name="agg_type" Type="nvarchar(max)" />
+        <Property Name="agg_formula" Type="nvarchar(max)" />
+        <Property Name="table_name" Type="nvarchar(max)" />
+        <Property Name="column_label" Type="nvarchar(max)" />
+        <Property Name="table_unique_id" Type="nvarchar(max)" />
+        <Property Name="source" Type="nvarchar(max)" />
+        <Property Name="micro_source" Type="nvarchar(max)" />
+        <Property Name="data_worker" Type="nvarchar(max)" />
+        <Property Name="createdby" Type="nvarchar(max)" />
+        <Property Name="createddate" Type="nvarchar(max)" />
+        <Property Name="published" Type="bit" />
+        <Property Name="validated" Type="nvarchar(max)" />
+        <Property Name="last_processed" Type="nvarchar(max)" />
+        <Property Name="processing_comment" Type="nvarchar(max)" />
+        <Property Name="version" Type="nvarchar(max)" />
+        <Property Name="caveat" Type="nvarchar(max)" />
+        <Property Name="genRaster" Type="bit" />
+        <Property Name="isDomain" Type="bit" />
+        <Property Name="mxdName" Type="nvarchar(max)" />
+        <Property Name="classColors" Type="nvarchar(max)" />
+        <Property Name="classBreaks" Type="nvarchar(max)" />
+        <Property Name="classLabels" Type="nvarchar(max)" />
+      </EntityType>-->
+</Schema>

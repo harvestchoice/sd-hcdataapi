@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c38e38223ba848b69fcae597e5c7db0f" Name="Diagram1">
+        <EntityTypeShape EntityType="HC_Model.CELL_VALUES" Width="1.5" PointX="2.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.CELL_VALUES_old" Width="1.5" PointX="4.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.classification" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.collection" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.collection_group" Width="1.5" PointX="8" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.continuous_classification" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.country" Width="1.5" PointX="5.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.country_collection" Width="1.5" PointX="8" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.discrete_classification" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.domain_country_results" Width="1.5" PointX="8" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.domain_variable" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.GAUL_2008_1" Width="1.5" PointX="10.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.GAUL_2012_1" Width="1.5" PointX="10.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.indicator_metadata" Width="1.5" PointX="10.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.ISO3" Width="1.5" PointX="6.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.schema" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.schema_domain" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.vCountryList" Width="1.5" PointX="12.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="HC_Model.vGAUL_2008" Width="1.5" PointX="12.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="HC_Model.fk_continuous_classification_classification" ManuallyRouted="false" />
+        <AssociationConnector Association="HC_Model.fk_discrete_classification_classification" ManuallyRouted="false" />
+        <AssociationConnector Association="HC_Model.FK_collection_group_collection" ManuallyRouted="false" />
+        <AssociationConnector Association="HC_Model.FK_country_collection_collection" ManuallyRouted="false" />
+        <AssociationConnector Association="HC_Model.fk_continuous_classification_domain_variable" ManuallyRouted="false" />
+        <AssociationConnector Association="HC_Model.FK_country_collection_country" ManuallyRouted="false" />
+        <AssociationConnector Association="HC_Model.FK_domain_country_results_country" ManuallyRouted="false" />
+        <AssociationConnector Association="HC_Model.fk_discrete_classification_domain_variable" ManuallyRouted="false" />
+        <AssociationConnector Association="HC_Model.FK_domain_country_results_schema" ManuallyRouted="false" />
+        <AssociationConnector Association="HC_Model.fk_schema_domain_domain_variable" ManuallyRouted="false" />
+        <AssociationConnector Association="HC_Model.fk_schema_domain_schema" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

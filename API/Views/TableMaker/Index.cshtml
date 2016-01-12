@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" charset="utf-8"> 
+    $(document).ready(initTablemaker());
+        $(function () {
+            //init jquery ui tabs            
+            var tabs = $("#tableTabs").tabs();
+            tabs.tabs({ cache: true });
+            tabs.tabs('paging', { nextButton: '<img src="style/images/next.png" alt="next" />', prevButton: '<img src="style/images/prev.png" alt="prev" />' });
+
+            //hide the indicator info panel
+            $('#aggregateInfoPanel').hide();
+           
+            //hide the right panel
+            toggleIntro('show');
+        });
+    </script>
+ <div id="siteContent">
+        <!-- INFO CONTENT -->
+        <div id="infoContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Integer ac leo eget libero bibendum molestie. Sed volutpat mauris eget velit 
+            mattis eget malesuada nibh dignissim. Suspendisse potenti. Morbi consectetur 
+            lectus eu mi facilisis at ultrices magna tempus. Pellentesque sagittis lacus 
+            eget tellus </div>
+        <!-- LEFT PANEL -->
+        <div id="leftPanel">
+            <!-- SELECTED INDICATORS PANEL -->
+            <div id="menuIndicators">
+                <span class="menuIndicatorTitle">Selected Indicators</span>
+                <div id="indicators"></div>
+                <div id="menuIndicatorLinks">
+                    <div id="mapper">View selected indicators in MAPPR</div><br />
+                    <div id="rawdata">Download raw data of selected indicators</div>
+                </div>
+            </div>
+            <div id="categoryMenu"></div>
+            <div id="subCategoryMenu" class="subCategoryMenu"></div>
+        </div>
+        <!-- RIGHT PANEL -->
+        <div id="rightPanel">
+            <!-- CUSTOMIZE INDICATORS PANEL -->
+            <div id="customizeMenu">
+                <div class="customizeTitle">Customize your table</div>
+                <table class="customizeMenu">
+                    <tr>
+                        <th>Rows</th>
+                        <th>Columns</th>
+                        <th>Table Options</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Choose row headings:<br /><div id="rowsMenu"></div><br />
+                            Choose sub-rows (optional):<br /><div id="subRowsMenu"></div>
+                            <div id="subRowsClear" onclick="clearMenu('subRowsMenu');" class="clearMenu">clear</div>
+                        </td>
+                        <td> 
+                            Choose columns (optional):<br /><div id="subColumnsMenu"></div>
+                            <div id="subColumnsClear" onclick="clearMenu('subColumnsMenu');" class="clearMenu">clear</div><br />
+                            <div id="columnFilter"></div>
+                        </td>
+                        <td>
+                            Decimal Separator:<br /><div id="separatorMenu"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- TABLE CONTENT -->
+            <div id="tableContent">
+                <div id="tableTitleSection">
+                <div id="tableTitle"  class="left"></div>
+                <a href="#" class="button right" onclick="downloadButtonClicked();">Export</a>
+                    <div id="downloads" class="hide"></div>
+                </div>
+                <div class="clear"></div>
+                <div id="tableTabs" style="display:none;">
+                    <ul class="tabs">
+                    </ul>                  
+                </div>
+            </div>
+        </div>
+        <!-- INTRO PANEL -->
+        <div id="introPanel"> Select an indicator from the categories to the left to make your table.</div>
+
+        <div id="aggregateInfoPanel" class="aggregateInfoPanel"></div>
+    </div>

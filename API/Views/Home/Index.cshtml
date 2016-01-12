@@ -1,0 +1,83 @@
+﻿
+<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title">
+                <a href="~/">Harvest Choice API</a></p>
+                  </div>
+          <script>
+              var data = {
+                  //regionNames: ["AGO", "BDI", "BEN", "BFA", "BWA", "CAF", "CIV", "CMR", "COD", "COG", "DJI", "ERI", "ETH", "GAB", "GHA", "GIN", "GMB", "GNB", "GNQ", "KEN", "LBR", "LSO", "MDG", "MLI", "MOZ", "MRT", "MWI", "NAM", "NER", "NGA", "RWA", "SDN", "SEN", "SLE", "SOM", "SWZ", "TCD", "TGO", "TZA", "UGA", "ZAF", "ZMB", "ZWE"],
+                  //regionNames: ["KEN", "MWI", "TZA"],
+                  //regionNames: ["Arusha","Manyara","Kilimanjaro"],
+                  countryIds: ['ZAF'],
+                  domainIds: [28],
+                 // pivotDomainId: 37,
+                  indicatorIds: [736],
+                 returnGeometry: true
+                 // groupCountry: true
+                 //wktGeometry: 'POINT(25.055 1.85)'
+                 //wktGeometry: 'POINT(37.415 9.016)',
+                 //doMarketAnalysis: true
+                  //wktGeometry:'POLYGON((20.430 -0.307,27.286 -0.351,27.286 -6.008,20.650 -6.008,20.474 -0.263,20.430 -0.307))'
+              };              
+
+              $.ajax({
+                  type: 'GET',
+                  url: 'api/cellvalues',
+                  data: data,
+                  jsonpCallback: successful,
+                  error: onError
+              });
+              
+              var topprData = {
+                  countryName: ["AGO", "BDI", "BEN", "BFA", "BWA", "CAF", "CIV", "CMR", "COD", "COG", "DJI", "ERI", "ETH", "GAB", "GHA", "GIN", "GMB", "GNB", "GNQ", "KEN", "LBR", "LSO", "MDG", "MLI", "MOZ", "MRT", "MWI", "NAM", "NER", "NGA", "RWA", "SDN", "SEN", "SLE", "SOM", "SWZ", "TCD", "TGO", "TZA", "UGA", "ZAF", "ZMB", "ZWE"]
+                  //GAULRegion: 'Abia'
+                  //wktGeometry: 'POLYGON((20.072 7.920,20.514 7.898,20.503 7.479,20.083 7.909,20.072 7.920))'
+              };
+             
+              //$.ajax({
+              //    type: 'GET',
+              //    url: 'api/toppr',
+              //    data: topprData,
+              //    jsonpCallback: successful,
+              //    error: onError
+              //});
+
+             
+              function successful (result){
+                  alert("success");
+              }
+              function onError (jqXHR, textStatus, errorThrown) {
+                  alert(errorThrown);
+              }
+
+    </script>
+    </div>
+</header>
+<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Welcome to the Harvest Choice Agricultural Data API !</h1>
+                <h2>This is the third iteration (0.3) of the API.</h2>
+            </hgroup>
+            <p>
+            The Harvest Choice Agricultural Data API is a framework that allows easy access to Harvest Choice data and services 
+            via the web directly over HTTP allowing access to a broad range of clients, including browsers and mobile devices. This API was built 
+            using ASP.NET MVC 5 Web API 2. It is connected to the Harvest Choice database using Entity Framework. In addition, the API leverages 
+            ESRI ArcGIS Server technology providing spatial analysis capabilities.  
+            </p>
+            <p>
+            The Harvest Choice Agricultural Data API provides a number of methods that provide access to over one hundred layers of spatially-explicit 
+            agriculatural, demographic and climate data for sub-Saharan Africa. Use the API to query and extract information from fine-resolution data layers based 
+            on 10km X 10km grid cells covering the sub-Saharan African region. 
+            </p>
+            <p>
+             For more information on the Harvest Choice Data API check out the documenation:
+                @Html.ActionLink("Click to view documentation", "Index", "Help")
+            </p>
+            <img src="~/Images/logo.png" style="width:176px; height: 46px;" />
+        </div>
+    </section>   
+</div>
