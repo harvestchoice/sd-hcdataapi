@@ -12,43 +12,48 @@
 -- update domain variable
 UPDATE [HC_DB_WEB_2].[dbo].[domain_variable] SET column_name = 'FS_2012' WHERE id = 343;
 -- add new classifications for FS_2012
-INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), 'Humid lowland tree crop');
-INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]),'Highland mixed');
-INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]),'Root and tuber crop');
-INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]),'Agro-pastoral');
-INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]),'Arid pastoral-oases');
-INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]),'Artisanal fishing');
-INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]),'Perennial mixed');
+INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), ' 6. Highland mixed');
+INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), '12. Pastoral');
+INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), '13. Arid pastoral-oases');
+INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), ' 3. Forest based');
+INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), '16. Perennial mixed');
+INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), ' 2. Humid lowland tree crop');
+INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), '11. Agro-pastoral');
+INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), '14. Artisanal fishing');
+INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), ' 9. Maize mixed');
+INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), ' 5. Highland perennial');
+INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), ' 8. Cereal-root crop mixed');
+INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), ' 7. Root and tuber crop');
+INSERT INTO [HC_DB_WEB_2].[dbo].[classification] (id, name) VALUES ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[classification]), ' 1. Irrigated');
 -- remove relationships to old classifications
 DELETE FROM [HC_DB_WEB_2].[dbo].discrete_classification WHERE domainid = 343;
 -- add relationhships to new classifications
 INSERT INTO [HC_DB_WEB_2].[dbo].[discrete_classification] (id, originalid, domainid, classid) VALUES 
- ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'1', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = 'Irrigated'));
+ ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'1', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = ' 1. Irrigated'));
 INSERT INTO [HC_DB_WEB_2].[dbo].[discrete_classification] (id, originalid, domainid, classid) VALUES
- ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'2', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = 'Humid lowland tree crop'));
+ ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'2', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = ' 2. Humid lowland tree crop'));
 INSERT INTO [HC_DB_WEB_2].[dbo].[discrete_classification] (id, originalid, domainid, classid) VALUES
- ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'3', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = 'Forest based'));
+ ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'3', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = ' 3. Forest based'));
 INSERT INTO [HC_DB_WEB_2].[dbo].[discrete_classification] (id, originalid, domainid, classid) VALUES
- ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'5', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = 'Highland perennial'));
+ ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'5', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = ' 5. Highland perennial'));
 INSERT INTO [HC_DB_WEB_2].[dbo].[discrete_classification] (id, originalid, domainid, classid) VALUES
- ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'6', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = 'Highland mixed'));
+ ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'6', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = ' 6. Highland mixed'));
 INSERT INTO [HC_DB_WEB_2].[dbo].[discrete_classification] (id, originalid, domainid, classid) VALUES
- ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'7', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = 'Root and tuber crop'));
+ ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'7', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = ' 7. Root and tuber crop'));
 INSERT INTO [HC_DB_WEB_2].[dbo].[discrete_classification] (id, originalid, domainid, classid) VALUES
- ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'8', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = 'Cereal-root crop mixed'));
+ ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'8', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = ' 8. Cereal-root crop mixed'));
 INSERT INTO [HC_DB_WEB_2].[dbo].[discrete_classification] (id, originalid, domainid, classid) VALUES
- ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'9', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = 'Maize mixed'));
+ ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'9', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = ' 9. Maize mixed'));
 INSERT INTO [HC_DB_WEB_2].[dbo].[discrete_classification] (id, originalid, domainid, classid) VALUES
- ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'11', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = 'Agro-pastoral'));
+ ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'11', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = '11. Agro-pastoral'));
 INSERT INTO [HC_DB_WEB_2].[dbo].[discrete_classification] (id, originalid, domainid, classid) VALUES
- ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'12', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = 'Pastoral'));
+ ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'12', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = '12. Pastoral'));
 INSERT INTO [HC_DB_WEB_2].[dbo].[discrete_classification] (id, originalid, domainid, classid) VALUES
- ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'13', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = 'Arid pastoral-oases'));
+ ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'13', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = '13. Arid pastoral-oases'));
 INSERT INTO [HC_DB_WEB_2].[dbo].[discrete_classification] (id, originalid, domainid, classid) VALUES
- ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'14', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = 'Artisanal fishing'));
+ ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'14', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = '14. Artisanal fishing'));
 INSERT INTO [HC_DB_WEB_2].[dbo].[discrete_classification] (id, originalid, domainid, classid) VALUES
- ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'16', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = 'Perennial mixed'));
-
+ ((SELECT MAX(id)+1 FROM [HC_DB_WEB_2].[dbo].[discrete_classification]),'16', 343, (SELECT id FROM [HC_DB_WEB_2].[dbo].[classification] WHERE name = '16. Perennial mixed'));
 
  -- update collection misspelling for Southern Africa
  UPDATE [HC_DB_WEB_2].[dbo].[collection] SET label = 'Southern Africa' WHERE code = 'XXW'; 
